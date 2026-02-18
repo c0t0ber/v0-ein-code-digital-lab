@@ -23,39 +23,39 @@ const spaceGrotesk = Space_Grotesk({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://eindev.ir'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://x10devs.com'),
   title: {
-    default: "EINCODE — Ehsan Ghaffar's Digital Laboratory",
-    template: "%s | EINCODE",
+    default: "x10Devs — Elite Development Team Delivering 10x Results",
+    template: "%s | x10Devs",
   },
   description:
-    "A digital workshop where code meets curiosity. Experiments, prototypes, and open-source artifacts by Ehsan Ghaffar.",
-  keywords: ["Software Engineering", "Web Development", "Next.js", "React", "TypeScript", "AI", "Machine Learning", "Systems Programming", "Code Experiments"],
-  authors: [{ name: "Ehsan Ghaffar", url: "https://github.com/ehsanghaffar" }],
-  creator: "Ehsan Ghaffar",
-  publisher: "Ehsan Ghaffar",
+    "High-performance development team that delivers 10x faster results. Expert engineers building cutting-edge web applications with Next.js, React, and modern technologies.",
+  keywords: ["Software Development", "Web Development", "Next.js", "React", "TypeScript", "Development Team", "Elite Engineers", "Fast Development", "Quality Code"],
+  authors: [{ name: "x10Devs", url: "https://github.com/x10devs" }],
+  creator: "x10Devs",
+  publisher: "x10Devs",
   generator: "v0.app",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "/",
-    title: "EINCODE — Ehsan Ghaffar's Digital Laboratory",
-    description: "A digital workshop where code meets curiosity. Experiments, prototypes, and open-source artifacts by Ehsan Ghaffar.",
-    siteName: "EINCODE",
+    title: "x10Devs — Elite Development Team Delivering 10x Results",
+    description: "High-performance development team that delivers 10x faster results. Expert engineers building cutting-edge web applications.",
+    siteName: "x10Devs",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "EINCODE — Ehsan Ghaffar's Digital Laboratory",
+        alt: "x10Devs — Elite Development Team",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "EINCODE — Ehsan Ghaffar's Digital Laboratory",
-    description: "A digital workshop where code meets curiosity. Experiments, prototypes, and open-source artifacts.",
-    creator: "@ehsanghaffar",
+    title: "x10Devs — Elite Development Team",
+    description: "High-performance development team that delivers 10x faster results. Expert engineers building cutting-edge web applications.",
+    creator: "@x10devs",
     images: ["/og-image.png"],
   },
   robots: {
