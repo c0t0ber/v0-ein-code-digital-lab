@@ -15,15 +15,15 @@ export function Footer() {
           {/* Left column */}
           <div className="space-y-6 sm:space-y-8 animate-fade-in-up">
             <div className="space-y-3">
-              <p className="font-mono text-xs uppercase tracking-[0.25em] sm:tracking-[0.35em] text-primary">Connect</p>
+              <p className="font-mono text-xs uppercase tracking-[0.25em] sm:tracking-[0.35em] text-primary">Контакты</p>
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl text-balance">
-                {"Let's build something "}
-                <span className="bg-gradient-to-l from-primary/50 to-accent text-transparent bg-clip-text ">together</span>
+                {"Обсудим ваш "}
+                <span className="bg-gradient-to-l from-primary/50 to-accent text-transparent bg-clip-text ">проект</span>
               </h2>
             </div>
             <p className="max-w-md text-base sm:text-lg text-muted-foreground leading-relaxed">
-              Always interested in collaborations, interesting problems, and conversations about code, design, and
-              everything in between.
+              Берём в работу веб-продукты, внутренние системы и нестандартные интеграции. Подключаемся как команда
+              разработки под ключ или усиливаем текущий состав.
             </p>
 
             <div className="pt-2">
@@ -31,7 +31,7 @@ export function Footer() {
                 href="mailto:hello@ehsanghaffar.dev"
                 className="group relative inline-flex items-center justify-center gap-3 overflow-hidden rounded-xl border border-primary bg-primary/10 px-8 py-4 sm:py-4 font-mono text-sm text-primary transition-all duration-500 hover:text-primary-foreground active:scale-[0.98] w-full sm:w-auto"
               >
-                <span className="relative z-10">send a signal</span>
+                <span className="relative z-10">написать нам</span>
                 <span className="relative z-10 transition-transform duration-300 group-hover:translate-x-1">→</span>
                 <span className="absolute inset-0 -translate-x-full bg-primary transition-transform duration-500 group-hover:translate-x-0" />
               </a>
@@ -41,7 +41,7 @@ export function Footer() {
           {/* Right column - Links */}
           <div className="space-y-6 lg:text-right animate-fade-in-up stagger-2">
             <p className="font-mono text-xs uppercase tracking-[0.25em] sm:tracking-[0.35em] text-muted-foreground">
-              Find me elsewhere
+              Каналы связи
             </p>
             <div className="space-y-2">
               {socialLinks.map((link, index) => (
@@ -75,9 +75,9 @@ export function Footer() {
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
             </span>
-            <span>Forged with</span>
+            <span>Сделано с</span>
             <Heart className="h-3.5 w-3.5 text-destructive animate-pulse" />
-            <span>& code</span>
+            <span>и вниманием к продукту</span>
           </div>
 
           <div className="flex items-center gap-4">
@@ -96,7 +96,7 @@ export function Footer() {
           </div>
 
           <p className="font-mono text-xs text-muted-foreground text-center sm:text-right">
-            © {new Date().getFullYear()} EINCODE — All experiments reserved
+            © {new Date().getFullYear()} x10Devs — команда заказной разработки
           </p>
         </div>
       </div>

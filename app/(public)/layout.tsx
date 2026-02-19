@@ -1,20 +1,9 @@
-import { CursorGlow } from "@/components/cursor-glow";
-import { Footer } from "@/components/footer";
-import { Header } from "@/components/header";
+import { notFound } from "next/navigation";
 
 export default function PublicLayout({
-  children,
+  children: _children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <main className="relative min-h-screen overflow-hidden scanlines">
-      <CursorGlow />
-      <div className="relative z-10">
-        <Header />
-        {children}
-        <Footer />
-      </div>
-    </main>
-  );
+  notFound();
 }

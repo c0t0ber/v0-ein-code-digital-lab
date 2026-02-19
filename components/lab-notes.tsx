@@ -7,35 +7,35 @@ import { ArrowRight } from "lucide-react"
 const notes = [
   {
     id: 1,
-    title: "Building a Linux distro from scratch",
-    excerpt: "Learnings from compiling the kernel, configuring BusyBox, and creating bootable ISOs with Syslinux.",
-    date: "Nov 2025",
-    category: "systems",
+    title: "Алексей — Tech Lead",
+    excerpt: "Архитектура решений, декомпозиция задач, контроль качества кода и запуск релизов. Стек: Node.js, PostgreSQL, Docker, CI/CD.",
+    date: "8+ лет в разработке",
+    category: "backend",
     color: "from-blue-500/20 to-cyan-500/20",
   },
   {
     id: 2,
-    title: "MCP protocol in LLM apps",
+    title: "Марина — Product Designer",
     excerpt:
-      "Implementing Model Context Protocol for seamless AI model interactions with vector databases in RAG apps.",
-    date: "Apr 2025",
-    category: "ai",
+      "Проектирует UX/UI для web и mobile, выстраивает пользовательские сценарии и дизайн-систему. Скиллы: Figma, прототипирование, JTBD.",
+    date: "6+ лет в продуктовых командах",
+    category: "design",
     color: "from-purple-500/20 to-pink-500/20",
   },
   {
     id: 3,
-    title: "Next.js 16 + Tailwind v4",
-    excerpt: "Exploring the new features in Next.js 16 and migrating to Tailwind CSS v4's new configuration system.",
-    date: "Dec 2024",
+    title: "Игорь — Frontend Engineer",
+    excerpt: "Разрабатывает клиентскую часть, повышает скорость интерфейсов и отвечает за UX-перформанс. Стек: React, Next.js, TypeScript, Tailwind.",
+    date: "5+ лет коммерческой разработки",
     category: "frontend",
     color: "from-primary/20 to-emerald-500/20",
   },
   {
     id: 4,
-    title: "Self-hosting LLMs with FastAPI",
-    excerpt: "Running Llama2 locally and building a personal chatbot API for natural language tasks.",
-    date: "Oct 2023",
-    category: "ai",
+    title: "Ольга — QA / Delivery Manager",
+    excerpt: "Организует тестирование, управляет релизами и коммуникацией с заказчиком. Скиллы: QA-процессы, автотесты, Scrum/Kanban.",
+    date: "7+ лет в delivery и QA",
+    category: "quality",
     color: "from-orange-500/20 to-amber-500/20",
   },
 ]
@@ -47,10 +47,10 @@ export function LabNotes() {
     <section id="notes" className="px-4 sm:px-6 py-20 sm:py-28 border-t border-border/30">
       <div className="mx-auto max-w-7xl">
         <div className="mb-10 sm:mb-14 space-y-3 animate-fade-in-up">
-          <p className="font-mono text-xs uppercase tracking-[0.25em] sm:tracking-[0.35em] text-primary">Field Notes</p>
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">Lab Notes</h2>
+          <p className="font-mono text-xs uppercase tracking-[0.25em] sm:tracking-[0.35em] text-primary">Команда</p>
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">Кто делает проект в реальности</h2>
           <p className="max-w-2xl text-base sm:text-lg text-muted-foreground leading-relaxed">
-            Brief observations, technical findings, and thoughts from the workbench.
+            Не абстрактный аутсорс, а конкретные специалисты с опытом продакшена: роли, ответственность и экспертиза.
           </p>
         </div>
 
@@ -87,7 +87,7 @@ export function LabNotes() {
                 <p className="text-sm leading-relaxed text-muted-foreground">{note.excerpt}</p>
 
                 <div className="mt-5 flex items-center gap-2 font-mono text-xs text-primary transition-all duration-300 sm:opacity-0 sm:translate-x-[-8px] group-hover:opacity-100 group-hover:translate-x-0">
-                  <span>read more</span>
+                  <span>роль и скиллы</span>
                   <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
                 </div>
               </div>

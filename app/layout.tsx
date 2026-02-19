@@ -25,37 +25,37 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://eindev.ir'),
   title: {
-    default: "EINCODE — Ehsan Ghaffar's Digital Laboratory",
-    template: "%s | EINCODE",
+    default: "x10Devs — Команда разработки",
+    template: "%s | x10Devs",
   },
   description:
-    "A digital workshop where code meets curiosity. Experiments, prototypes, and open-source artifacts by Ehsan Ghaffar.",
-  keywords: ["Software Engineering", "Web Development", "Next.js", "React", "TypeScript", "AI", "Machine Learning", "Systems Programming", "Code Experiments"],
-  authors: [{ name: "Ehsan Ghaffar", url: "https://github.com/ehsanghaffar" }],
-  creator: "Ehsan Ghaffar",
-  publisher: "Ehsan Ghaffar",
+    "x10Devs — команда заказной разработки. Проектируем, разрабатываем и запускаем цифровые продукты для бизнеса.",
+  keywords: ["Заказная разработка", "Web Development", "Next.js", "React", "TypeScript", "AI", "MVP", "Команда разработки"],
+  authors: [{ name: "x10Devs" }],
+  creator: "x10Devs",
+  publisher: "x10Devs",
   generator: "v0.app",
   openGraph: {
     type: "website",
-    locale: "en_US",
+    locale: "ru_RU",
     url: "/",
-    title: "EINCODE — Ehsan Ghaffar's Digital Laboratory",
-    description: "A digital workshop where code meets curiosity. Experiments, prototypes, and open-source artifacts by Ehsan Ghaffar.",
-    siteName: "EINCODE",
+    title: "x10Devs — Команда разработки",
+    description: "Запускаем цифровые продукты: веб-платформы, внутренние системы и интеграции для бизнеса.",
+    siteName: "x10Devs",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "EINCODE — Ehsan Ghaffar's Digital Laboratory",
+        alt: "x10Devs — Команда разработки",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "EINCODE — Ehsan Ghaffar's Digital Laboratory",
-    description: "A digital workshop where code meets curiosity. Experiments, prototypes, and open-source artifacts.",
-    creator: "@ehsanghaffar",
+    title: "x10Devs — Команда разработки",
+    description: "Запускаем цифровые продукты: от идеи и дизайна до релиза и поддержки.",
+    creator: "@x10devs",
     images: ["/og-image.png"],
   },
   robots: {
@@ -95,7 +95,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${geist.variable} ${geistMono.variable} ${spaceGrotesk.variable}`}>
+    <html lang="ru" suppressHydrationWarning className={`${geist.variable} ${geistMono.variable} ${spaceGrotesk.variable}`}>
       <body className="font-sans antialiased">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={true} storageKey="theme-mode">
           {children}

@@ -33,21 +33,13 @@ export function generateWebsiteStructuredData(url: string) {
   return {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'EINCODE',
-    description: "A digital workshop where code meets curiosity. Experiments, prototypes, and open-source artifacts by Ehsan Ghaffar.",
+    name: 'x10Devs',
+    description: "Команда заказной разработки: проектирование, разработка и запуск цифровых продуктов для бизнеса.",
     url: url,
     author: {
-      '@type': 'Person',
-      name: 'Ehsan Ghaffar',
-      url: 'https://github.com/ehsanghaffar',
-    },
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: {
-        '@type': 'EntryPoint',
-        urlTemplate: `${url}/blog?search={search_term_string}`,
-      },
-      'query-input': 'required name=search_term_string',
+      '@type': 'Organization',
+      name: 'x10Devs',
+      url,
     },
   }
 }
@@ -55,20 +47,11 @@ export function generateWebsiteStructuredData(url: string) {
 export function generatePersonStructuredData() {
   return {
     '@context': 'https://schema.org',
-    '@type': 'Person',
-    name: 'Ehsan Ghaffar',
+    '@type': 'Organization',
+    name: 'x10Devs',
     url: 'https://eindev.ir',
-    image: 'https://eindev.ir/developer-portrait.png',
-    sameAs: [
-      'https://github.com/ehsanghaffar',
-      'https://twitter.com/ehsanghaffar',
-      'https://linkedin.com/in/ehsanghaffar',
-    ],
-    jobTitle: 'Software Engineer',
-    worksFor: {
-      '@type': 'Organization',
-      name: 'EINCODE',
-    },
+    logo: 'https://eindev.ir/icon.svg',
+    sameAs: ['https://github.com/ehsanghaffar', 'https://linkedin.com/in/ehsanghaffar'],
   }
 }
 

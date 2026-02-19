@@ -1,10 +1,10 @@
-import { Header } from "@/components/header"
 import { HeroSection } from "@/components/hero-section"
 import { ProjectsGrid } from "@/components/projects-grid"
 import { LabNotes } from "@/components/lab-notes"
 import { Workbench } from "@/components/workbench"
 import { Footer } from "@/components/footer"
 import { CursorGlow } from "@/components/cursor-glow"
+import { LandingNav } from "@/components/landing-nav"
 import { generateWebsiteStructuredData, generatePersonStructuredData } from "@/lib/structured-data"
 
 export default function Home() {
@@ -22,10 +22,10 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personStructuredData) }}
       />
-      <main className="relative min-h-screen overflow-hidden scanlines">
+      <main id="home" className="relative min-h-screen overflow-hidden scanlines">
         <CursorGlow />
         <div className="relative z-10">
-          <Header />
+          <LandingNav />
           <HeroSection />
           <ProjectsGrid />
           <LabNotes />

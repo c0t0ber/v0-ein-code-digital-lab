@@ -4,34 +4,34 @@ import { Github, ExternalLink } from "lucide-react"
 const wipItems = [
   {
     id: 1,
-    name: "next16-docker-tw4-starter",
-    description: "Next.js 16 starter with App Router, Tailwind v4, Next-Auth v5, and Docker",
-    progress: 85,
-    lastUpdated: "Dec 2024",
+    name: "Frontend",
+    description: "React, Next.js, TypeScript, Tailwind, Zustand, Storybook, адаптивная и доступная верстка",
+    progress: 95,
+    lastUpdated: "уровень: эксперт",
     url: "https://github.com/ehsanghaffar/next16-docker-tw4-starter",
   },
   {
     id: 2,
-    name: "handbuilt-linux",
-    description: "Minimal Linux distro from scratch with BusyBox and Syslinux bootloader",
-    progress: 60,
-    lastUpdated: "Nov 2025",
+    name: "Backend",
+    description: "Node.js, NestJS, Python, REST/GraphQL API, очереди, интеграции с внешними системами",
+    progress: 92,
+    lastUpdated: "уровень: эксперт",
     url: "https://github.com/ehsanghaffar/handbuilt-linux",
   },
   {
     id: 3,
-    name: "einbiogpt",
-    description: "AI-powered social media bio generator with MCP integration",
-    progress: 90,
-    lastUpdated: "Apr 2025",
+    name: "Data & AI",
+    description: "LLM-интеграции, RAG, пайплайны данных, аналитика, автоматизация процессов на базе AI",
+    progress: 86,
+    lastUpdated: "уровень: уверенный",
     url: "https://github.com/ehsanghaffar/einbiogpt",
   },
   {
     id: 4,
-    name: "llm-practice",
-    description: "Self-hosted chatbot API with RAG and MCP protocol support",
-    progress: 75,
-    lastUpdated: "Apr 2025",
+    name: "DevOps & Infra",
+    description: "Docker, Kubernetes, CI/CD, мониторинг, логирование, безопасные релизы и масштабирование",
+    progress: 88,
+    lastUpdated: "уровень: продакшн",
     url: "https://github.com/ehsanghaffar/llm-practice",
   },
 ]
@@ -42,11 +42,11 @@ export function Workbench() {
       <div className="mx-auto max-w-7xl">
         <div className="mb-10 sm:mb-14 space-y-3 animate-fade-in-up">
           <p className="font-mono text-xs uppercase tracking-[0.25em] sm:tracking-[0.35em] text-primary">
-            Work in Progress
+            Экспертиза
           </p>
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">Workbench</h2>
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">Технологии, которые мы шарим</h2>
           <p className="max-w-2xl text-base sm:text-lg text-muted-foreground leading-relaxed">
-            Active experiments and prototypes. Things that are being built, broken, and rebuilt.
+            Рабочий стек команды для запуска коммерческих продуктов: от интерфейсов и API до инфраструктуры и AI.
           </p>
         </div>
 
@@ -58,10 +58,10 @@ export function Workbench() {
               <div className="h-3 w-3 rounded-full bg-yellow-500/60 transition-colors hover:bg-yellow-500 cursor-pointer" />
               <div className="h-3 w-3 rounded-full bg-primary/60 transition-colors hover:bg-primary cursor-pointer" />
             </div>
-            <span className="ml-4 font-mono text-xs text-muted-foreground truncate">~/ehsanghaffar/active</span>
+            <span className="ml-4 font-mono text-xs text-muted-foreground truncate">~/x10devs/stack</span>
             <div className="ml-auto hidden sm:flex items-center gap-2 text-muted-foreground">
               <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
-              <span className="font-mono text-xs">live</span>
+              <span className="font-mono text-xs">актуально</span>
             </div>
           </div>
 
@@ -123,8 +123,8 @@ export function Workbench() {
           <div className="border-t border-border/50 bg-secondary/30 px-4 sm:px-5 py-4">
             <div className="flex items-center gap-2 font-mono text-xs text-muted-foreground">
               <span className="text-primary">❯</span>
-              <span className="typing-cursor truncate">git status --all</span>
-              <span className="ml-auto text-primary/50 hidden sm:block">press enter to run</span>
+              <span className="typing-cursor truncate">x10devs --stack --show</span>
+              <span className="ml-auto text-primary/50 hidden sm:block">нажмите enter</span>
             </div>
           </div>
         </div>
