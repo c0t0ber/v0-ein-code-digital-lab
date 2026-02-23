@@ -35,7 +35,7 @@ export function HeroSection() {
   }, [displayText, isDeleting, currentRole])
 
   return (
-    <section className="relative px-4 sm:px-6 pt-28 sm:pt-36 pb-16 sm:pb-24">
+    <section className="relative overflow-x-hidden px-4 sm:px-6 pt-28 sm:pt-36 pb-16 sm:pb-24">
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-20 lg:items-center lg:min-h-[70vh]">
           {/* Left column - Text */}
@@ -84,8 +84,8 @@ export function HeroSection() {
           </div>
 
           {/* Right column - ASCII Art / Visual */}
-          <div className="relative animate-scale-in stagger-4">
-            <div className="relative rounded-xl border border-border bg-card/60 glass p-5 sm:p-8 lg:-mx-3 hover-lift">
+          <div className="relative min-w-0 animate-scale-in stagger-4">
+            <div className="relative min-w-0 rounded-xl border border-border bg-card/60 glass p-5 sm:p-8 lg:-mx-3 hover-lift">
               {/* Terminal header dots */}
               <div className="absolute top-4 left-4 flex items-center gap-2">
                 <div className="h-3 w-3 rounded-full bg-destructive/60 transition-colors hover:bg-destructive" />
@@ -96,7 +96,7 @@ export function HeroSection() {
                 terminal://x10devs
               </div>
 
-              <pre className="mt-6 overflow-x-auto font-mono text-[10px] leading-relaxed text-primary/80 sm:text-xs md:text-sm">
+              <pre className="mt-6 max-w-full overflow-x-auto font-mono text-[10px] leading-relaxed text-primary/80 sm:text-xs md:text-sm">
                 <span>{`██╗  ██╗ ██╗ ██████╗ ██████╗ ███████╗██╗   ██╗███████╗
 ╚██╗██╔╝███║██╔═████╗██╔══██╗██╔════╝██║   ██║██╔════╝
  ╚███╔╝ ╚██║██║██╔██║██║  ██║█████╗  ██║   ██║███████╗
@@ -136,8 +136,8 @@ export function HeroSection() {
           <div className="h-12 w-px animate-pulse bg-gradient-to-b from-primary/50 to-transparent" />
         </div>
 
-        <div className="w-full max-w-7xl rounded-xl border border-border/60 bg-card/40 p-2 glass">
-          <div style={{ width: "100%", height: "420px", overflow: "scroll" }} id="my-cal-inline-15min" />
+        <div className="w-full max-w-7xl overflow-hidden rounded-xl border border-border/60 bg-card/40 p-2 glass">
+          <div style={{ width: "100%", maxWidth: "100%", height: "420px", overflow: "auto" }} id="my-cal-inline-15min" />
         </div>
       </div>
       <Script id="cal-inline-15min" strategy="afterInteractive">{`

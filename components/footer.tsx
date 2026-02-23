@@ -16,7 +16,8 @@ export function Footer() {
               </h2>
             </div>
             <p className="max-w-md text-base sm:text-lg text-muted-foreground leading-relaxed">
-              Напишите — ответим в течение дня. Без брифов на 40 страниц, без "мы вам перезвоним". Сразу по делу.
+              Можете написать нам в телеграм, либо сразу поставить 15 минутную встречу с нашей командой для
+              обсуждения вашего проекта.
             </p>
 
             <div className="pt-2">

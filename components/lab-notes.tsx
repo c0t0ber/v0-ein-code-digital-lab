@@ -19,7 +19,7 @@ const notes = [
     id: 2,
     title: "Данил Устинов — Team Lead @ SpectrumData",
     excerpt:
-      "Архитектор и технарь. Пайплайны, инфраструктура. Отвечает за то, чтобы всё работало, а не просто \"запускалось на демке\".",
+      "Проектирует архитектуру, выбирает стек, запускает в прод. Технический фундамент каждого проекта.",
     date: "8+ лет в разработке",
     category: "tech",
     link: "https://www.linkedin.com/in/danil-ustinov/",
@@ -46,7 +46,7 @@ export function LabNotes() {
           <p className="font-mono text-xs uppercase tracking-[0.25em] sm:tracking-[0.35em] text-primary">Команда</p>
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">Кто делает проект в реальности</h2>
           <p className="max-w-2xl text-base sm:text-lg text-muted-foreground leading-relaxed">
-            Конкретные люди с продакшен-опытом. Каждый отвечает за свой кусок.
+            Конкретные люди с продакшен опытом.
           </p>
         </div>
 
