@@ -56,8 +56,8 @@ export function HeroSection() {
 
             <ul className="max-w-lg list-disc space-y-2 pl-5 text-base leading-relaxed text-foreground/90 sm:text-lg sm:font-medium animate-fade-in-up stagger-2">
               <li>MVP, боты, SaaS, автоматизация контента.</li>
-              <li>24 проекта в продакшене.</li>
-              <li>Команда, которая строит продукты на AI. В деле с GPT-3.</li>
+              <li>10 проектов в продакшене.</li>
+              <li>Команда, которая строит продукты на AI. Работаем с нейросетями со времён GPT-3.</li>
             </ul>
 
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up stagger-3">
@@ -96,7 +96,7 @@ export function HeroSection() {
                 terminal://x10devs
               </div>
 
-              <pre className="mt-6 max-w-full overflow-x-auto font-mono text-[10px] leading-relaxed text-primary/80 sm:text-xs md:text-sm">
+              <pre className="mt-6 max-w-full overflow-x-auto font-mono text-[clamp(5px,1.4vw,10px)] leading-tight text-primary/80 sm:text-xs md:text-sm">
                 <span>{`██╗  ██╗ ██╗ ██████╗ ██████╗ ███████╗██╗   ██╗███████╗
 ╚██╗██╔╝███║██╔═████╗██╔══██╗██╔════╝██║   ██║██╔════╝
  ╚███╔╝ ╚██║██║██╔██║██║  ██║█████╗  ██║   ██║███████╗
