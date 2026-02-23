@@ -39,7 +39,10 @@ export function Footer() {
               Запись на созвон
             </p>
             <div className="rounded-xl border border-border/60 bg-card/40 p-2 glass">
-              <div style={{ width: "100%", height: "420px", overflow: "scroll" }} id="my-cal-inline-15min-footer" />
+              <div
+                id="my-cal-inline-15min-footer"
+                className="h-[920px] w-full overflow-auto"
+              />
             </div>
           </div>
         </div>

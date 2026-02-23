@@ -1,7 +1,6 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import Script from "next/script"
 
 const roles = ["цифровые продукты", "веб-платформы", "MVP и стартапы", "B2B-сервисы", "сложные интеграции"]
 
@@ -73,12 +72,13 @@ export function HeroSection() {
               </a>
               <a
                 href="#connect"
-                className="group inline-flex items-center justify-center gap-3 rounded-lg border border-border px-7 py-4 sm:py-3.5 font-mono text-sm text-muted-foreground transition-all duration-300 hover:border-foreground hover:text-foreground hover:bg-secondary/50 active:scale-[0.98]"
+                className="group relative inline-flex items-center justify-center gap-3 overflow-hidden rounded-lg border border-primary bg-primary/10 px-7 py-4 sm:py-3.5 font-mono text-sm text-primary transition-all duration-500 hover:bg-primary hover:text-primary-foreground active:scale-[0.98]"
               >
-                <span>обсудить задачу</span>
-                <span className="opacity-0 -translate-x-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0">
+                <span className="relative z-10">обсудить задачу</span>
+                <span className="relative z-10 transition-all duration-300 group-hover:translate-x-1">
                   →
                 </span>
+                <span className="absolute inset-0 -translate-x-full bg-primary transition-transform duration-500 group-hover:translate-x-0" />
               </a>
             </div>
           </div>
@@ -130,26 +130,10 @@ export function HeroSection() {
         </div>
       </div>
 
-      <div className="mt-10 flex flex-col items-center gap-6 animate-fade-in stagger-6">
-        <div className="hidden lg:flex flex-col items-center gap-2">
-          <span className="font-mono text-xs text-muted-foreground">листай вниз</span>
-          <div className="h-12 w-px animate-pulse bg-gradient-to-b from-primary/50 to-transparent" />
-        </div>
-
-        <div className="w-full max-w-7xl overflow-hidden rounded-xl border border-border/60 bg-card/40 p-2 glass">
-          <div style={{ width: "100%", maxWidth: "100%", height: "420px", overflow: "auto" }} id="my-cal-inline-15min" />
-        </div>
+      <div className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 lg:flex flex-col items-center gap-2 animate-fade-in stagger-6">
+        <span className="font-mono text-xs text-muted-foreground">листай вниз</span>
+        <div className="h-12 w-px animate-pulse bg-gradient-to-b from-primary/50 to-transparent" />
       </div>
-      <Script id="cal-inline-15min" strategy="afterInteractive">{`
-        (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-        Cal("init", "15min", {origin:"https://app.cal.com"});
-        Cal.ns["15min"]("inline", {
-          elementOrSelector:"#my-cal-inline-15min",
-          config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
-          calLink: "new-era-devs/15min",
-        });
-        Cal.ns["15min"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
-      `}</Script>
     </section>
   )
 }
