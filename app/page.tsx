@@ -1,7 +1,6 @@
 import { HeroSection } from "@/components/hero-section"
 import { ProjectsGrid } from "@/components/projects-grid"
 import { LabNotes } from "@/components/lab-notes"
-import { Workbench } from "@/components/workbench"
 import { Footer } from "@/components/footer"
 import { CursorGlow } from "@/components/cursor-glow"
 import { LandingNav } from "@/components/landing-nav"
@@ -29,7 +28,6 @@ export default function Home() {
           <HeroSection />
           <ProjectsGrid />
           <LabNotes />
-          <Workbench />
           <Footer />
         </div>
       </main>

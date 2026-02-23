@@ -1,11 +1,5 @@
-import { Github, Twitter, Linkedin, Mail, ExternalLink, Heart } from "lucide-react"
-
-const socialLinks = [
-  { label: "GitHub", href: "https://github.com/ehsanghaffar", handle: "@ehsanghaffar", icon: Github },
-  { label: "Twitter", href: "https://twitter.com/ehsanghaffar", handle: "@ehsanghaffar", icon: Twitter },
-  { label: "LinkedIn", href: "https://linkedin.com/in/ehsanghaffar", handle: "/in/ehsanghaffar", icon: Linkedin },
-  { label: "Email", href: "mailto:hello@ehsanghaffar.dev", handle: "hello@ehsanghaffar.dev", icon: Mail },
-]
+import Script from "next/script"
+import { Heart } from "lucide-react"
 
 export function Footer() {
   return (
@@ -22,13 +16,14 @@ export function Footer() {
               </h2>
             </div>
             <p className="max-w-md text-base sm:text-lg text-muted-foreground leading-relaxed">
-              Берём в работу веб-продукты, внутренние системы и нестандартные интеграции. Подключаемся как команда
-              разработки под ключ или усиливаем текущий состав.
+              Напишите — ответим в течение дня. Без брифов на 40 страниц, без "мы вам перезвоним". Сразу по делу.
             </p>
 
             <div className="pt-2">
               <a
-                href="mailto:hello@ehsanghaffar.dev"
+                href="https://t.me/oleg_code"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group relative inline-flex items-center justify-center gap-3 overflow-hidden rounded-xl border border-primary bg-primary/10 px-8 py-4 sm:py-4 font-mono text-sm text-primary transition-all duration-500 hover:text-primary-foreground active:scale-[0.98] w-full sm:w-auto"
               >
                 <span className="relative z-10">написать нам</span>
@@ -38,33 +33,12 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Right column - Links */}
-          <div className="space-y-6 lg:text-right animate-fade-in-up stagger-2">
+          <div className="space-y-6 animate-fade-in-up stagger-2">
             <p className="font-mono text-xs uppercase tracking-[0.25em] sm:tracking-[0.35em] text-muted-foreground">
-              Каналы связи
+              Запись на созвон
             </p>
-            <div className="space-y-2">
-              {socialLinks.map((link, index) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  target={link.label !== "Email" ? "_blank" : undefined}
-                  rel={link.label !== "Email" ? "noopener noreferrer" : undefined}
-                  className="group flex items-center justify-between gap-4 rounded-xl border border-transparent p-4 transition-all duration-300 lg:flex-row-reverse active:bg-secondary/30 hover:border-border/50 hover:bg-card/50 glass animate-fade-in"
-                  style={{ animationDelay: `${index * 100 + 400}ms` }}
-                >
-                  <div className="flex items-center gap-3 lg:flex-row-reverse">
-                    <link.icon className="h-5 w-5 text-muted-foreground transition-all duration-300 group-hover:text-primary group-hover:scale-110" />
-                    <span className="font-mono text-sm font-medium transition-colors group-hover:text-gradient">
-                      {link.label}
-                    </span>
-                    {link.label !== "Email" && (
-                      <ExternalLink className="h-3 w-3 text-muted-foreground/50 opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-1" />
-                    )}
-                  </div>
-                  <span className="font-mono text-xs text-muted-foreground truncate">{link.handle}</span>
-                </a>
-              ))}
+            <div className="rounded-xl border border-border/60 bg-card/40 p-2 glass">
+              <div style={{ width: "100%", height: "420px", overflow: "scroll" }} id="my-cal-inline-15min-footer" />
             </div>
           </div>
         </div>
@@ -80,26 +54,21 @@ export function Footer() {
             <span>и вниманием к продукту</span>
           </div>
 
-          <div className="flex items-center gap-4">
-            {socialLinks.slice(0, 3).map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={link.label}
-                className="text-muted-foreground/50 transition-all duration-300 hover:text-primary hover:scale-110"
-              >
-                <link.icon className="h-5 w-5" />
-              </a>
-            ))}
-          </div>
-
           <p className="font-mono text-xs text-muted-foreground text-center sm:text-right">
             © {new Date().getFullYear()} x10Devs — команда заказной разработки
           </p>
         </div>
       </div>
+      <Script id="cal-inline-15min-footer" strategy="afterInteractive">{`
+        (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+        Cal("init", "15minFooter", {origin:"https://app.cal.com"});
+        Cal.ns["15minFooter"]("inline", {
+          elementOrSelector:"#my-cal-inline-15min-footer",
+          config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
+          calLink: "new-era-devs/15min",
+        });
+        Cal.ns["15minFooter"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+      `}</Script>
     </footer>
   )
 }

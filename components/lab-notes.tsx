@@ -7,36 +7,32 @@ import { ArrowRight } from "lucide-react"
 const notes = [
   {
     id: 1,
-    title: "Алексей — Tech Lead",
-    excerpt: "Архитектура решений, декомпозиция задач, контроль качества кода и запуск релизов. Стек: Node.js, PostgreSQL, Docker, CI/CD.",
+    title: "Олег Стефанов — Tech Lead @ Salmon",
+    excerpt:
+      "Строит продукты на AI, консультирует бизнес по AI. Если можно автоматизировать — он знает как.",
     date: "8+ лет в разработке",
-    category: "backend",
+    category: "ai",
+    link: "https://www.linkedin.com/in/oleg-stefanov-a887b1196/",
     color: "from-blue-500/20 to-cyan-500/20",
   },
   {
     id: 2,
-    title: "Марина — Product Designer",
+    title: "Данил Устинов — Team Lead @ SpectrumData",
     excerpt:
-      "Проектирует UX/UI для web и mobile, выстраивает пользовательские сценарии и дизайн-систему. Скиллы: Figma, прототипирование, JTBD.",
-    date: "6+ лет в продуктовых командах",
-    category: "design",
+      "Архитектор и технарь. Пайплайны, инфраструктура. Отвечает за то, чтобы всё работало, а не просто \"запускалось на демке\".",
+    date: "8+ лет в разработке",
+    category: "tech",
+    link: "https://www.linkedin.com/in/danil-ustinov/",
     color: "from-purple-500/20 to-pink-500/20",
   },
   {
     id: 3,
-    title: "Игорь — Frontend Engineer",
-    excerpt: "Разрабатывает клиентскую часть, повышает скорость интерфейсов и отвечает за UX-перформанс. Стек: React, Next.js, TypeScript, Tailwind.",
-    date: "5+ лет коммерческой разработки",
-    category: "frontend",
+    title: "Кирилл Зубков — Project Manager",
+    excerpt:
+      "Связующее звено между вами и командой. Отвечает за то, чтобы всё было прозрачно и в срок.",
+    date: "3+ года в PM",
+    category: "management",
     color: "from-primary/20 to-emerald-500/20",
-  },
-  {
-    id: 4,
-    title: "Ольга — QA / Delivery Manager",
-    excerpt: "Организует тестирование, управляет релизами и коммуникацией с заказчиком. Скиллы: QA-процессы, автотесты, Scrum/Kanban.",
-    date: "7+ лет в delivery и QA",
-    category: "quality",
-    color: "from-orange-500/20 to-amber-500/20",
   },
 ]
 
@@ -50,7 +46,7 @@ export function LabNotes() {
           <p className="font-mono text-xs uppercase tracking-[0.25em] sm:tracking-[0.35em] text-primary">Команда</p>
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">Кто делает проект в реальности</h2>
           <p className="max-w-2xl text-base sm:text-lg text-muted-foreground leading-relaxed">
-            Не абстрактный аутсорс, а конкретные специалисты с опытом продакшена: роли, ответственность и экспертиза.
+            Конкретные люди с продакшен-опытом. Каждый отвечает за свой кусок.
           </p>
         </div>
 
@@ -86,10 +82,23 @@ export function LabNotes() {
 
                 <p className="text-sm leading-relaxed text-muted-foreground">{note.excerpt}</p>
 
-                <div className="mt-5 flex items-center gap-2 font-mono text-xs text-primary transition-all duration-300 sm:opacity-0 sm:translate-x-[-8px] group-hover:opacity-100 group-hover:translate-x-0">
-                  <span>роль и скиллы</span>
-                  <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
-                </div>
+                {note.link ? (
+                  <a
+                    href={note.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="mt-5 inline-flex items-center gap-2 font-mono text-xs text-primary transition-all duration-300 hover:text-foreground sm:opacity-0 sm:translate-x-[-8px] group-hover:opacity-100 group-hover:translate-x-0"
+                  >
+                    <span>роль и скиллы</span>
+                    <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+                  </a>
+                ) : (
+                  <div className="mt-5 flex items-center gap-2 font-mono text-xs text-primary transition-all duration-300 sm:opacity-0 sm:translate-x-[-8px] group-hover:opacity-100 group-hover:translate-x-0">
+                    <span>роль и скиллы</span>
+                    <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+                  </div>
+                )}
               </div>
 
               <div className="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-primary to-transparent transition-all duration-500 group-hover:w-full" />
