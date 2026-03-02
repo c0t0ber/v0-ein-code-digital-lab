@@ -3,7 +3,7 @@ import { Heart } from "lucide-react"
 
 export function Footer() {
   return (
-    <footer id="connect" className="border-t border-border/30 px-4 sm:px-6 py-20 sm:py-28">
+    <footer id="connect" className="border-t border-border/30 px-4 sm:px-6 py-16 sm:py-28">
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-12 sm:gap-16 lg:grid-cols-2">
           {/* Left column */}
@@ -18,6 +18,8 @@ export function Footer() {
             <p className="max-w-md text-base sm:text-lg text-muted-foreground leading-relaxed">
               Можете написать нам в телеграм, либо сразу поставить 15 минутную встречу с нашей командой для
               обсуждения вашего проекта.
+              <br />
+              Для запросов напрямую к Олегу, пишите в телеграм.
             </p>
 
             <div className="pt-2">
@@ -34,14 +36,14 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="space-y-6 animate-fade-in-up stagger-2">
+          <div className="space-y-6 stagger-2">
             <p className="font-mono text-xs uppercase tracking-[0.25em] sm:tracking-[0.35em] text-muted-foreground">
               Запись на созвон
             </p>
-            <div className="rounded-xl border border-border/60 bg-card/40 p-2 glass">
+            <div className="cal-embed-shell relative z-[110] overflow-hidden rounded-xl border border-border/60 bg-card/70 p-0 sm:p-2">
               <div
                 id="my-cal-inline-15min-footer"
-                className="h-[920px] w-full overflow-auto"
+                className="w-full overflow-hidden"
               />
             </div>
           </div>

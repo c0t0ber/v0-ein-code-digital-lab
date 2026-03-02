@@ -218,6 +218,51 @@
   color: var(--primary);
 }
 
+/* Stable metrics for ASCII/box-drawing art on macOS Retina */
+.ascii-terminal {
+  font-family: "SF Mono", "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-variant-ligatures: none;
+  white-space: pre;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Cal.com embed stability */
+.cal-embed-shell {
+  background: oklch(from var(--card) l c h / 0.72);
+}
+
+#my-cal-inline-15min-footer {
+  width: 100%;
+  min-height: 860px;
+}
+
+#my-cal-inline-15min-footer iframe {
+  display: block;
+  width: 100%;
+  min-height: 860px;
+  border: 0;
+}
+
+@media (min-width: 640px) {
+  #my-cal-inline-15min-footer {
+    min-height: 980px;
+  }
+
+  #my-cal-inline-15min-footer iframe {
+    min-height: 980px;
+  }
+}
+
+@media (min-width: 1024px) {
+  #my-cal-inline-15min-footer {
+    min-height: 1100px;
+  }
+
+  #my-cal-inline-15min-footer iframe {
+    min-height: 1100px;
+  }
+}
+
 /* New animation utilities */
 @keyframes fade-in-up {
   from {

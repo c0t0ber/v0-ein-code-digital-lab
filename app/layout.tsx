@@ -7,17 +7,17 @@ import "./globals.css"
 
 // Configure fonts with proper options
 const geist = Geist({
-  subsets: ["latin"],
+  subsets: ["latin", "cyrillic"],
   variable: '--font-geist',
   display: 'swap',
 })
 const geistMono = Geist_Mono({
-  subsets: ["latin"],
+  subsets: ["latin", "cyrillic"],
   variable: '--font-geist-mono',
   display: 'swap',
 })
 const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
+  subsets: ["latin", "cyrillic"],
   variable: '--font-space-grotesk',
   display: 'swap',
 })
