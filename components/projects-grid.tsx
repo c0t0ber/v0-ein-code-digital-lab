@@ -8,8 +8,8 @@ const projects = [
     id: 0,
     title: "AI-бот холодных продаж в Telegram",
     description:
-      "Бот сам пишет клиентам, общается как человек и доводит до продажи. Антидетект, ротация аккаунтов, полная автоматизация.",
-    outcomes: ["> 100+ клиентов в день", "> без участия человека", "> срок: 4 недели"],
+      "Бот сам пишет клиентам в Telegram, ведёт диалог и доводит до продажи. Антидетект, ротация аккаунтов, работает без присмотра.",
+    outcomes: ["> 100+ клиентов в день", "> без участия человека", "> 4 недели на разработку"],
     tags: ["Python", "Next.js", "Postgres", "Redis", "Telegram API", "Anti-detect"],
     status: "zapushen",
     year: "2025",
@@ -24,8 +24,8 @@ const projects = [
     id: 1,
     title: "Контент-завод SEO-статей для онлайн-университета из топ-5",
     description:
-      "Система автогенерации статей по психологии: подбор тем, генерация, фактчекинг и выгрузка в WordPress — полный цикл без участия человека.",
-    outcomes: ["> 200+ статей сгенерировано", "> 800+ часов сэкономлено", "> срок разработки: 2 недели"],
+      "Генератор SEO-статей по психологии для онлайн-университета. От подбора тем до публикации в WordPress, включая фактчекинг. Всё работает автоматом.",
+    outcomes: ["> 200+ статей на выходе", "> ~800 часов сэкономлено", "> сделали за 2 недели"],
     tags: ["Python", "n8n", "WordPress API", "OpenAI", "RAG Pipeline"],
     status: "zapushen",
     year: "2025",
@@ -39,8 +39,8 @@ const projects = [
     id: 2,
     title: "AI-нутрициолог в Telegram",
     description:
-      "Бот считает калории по фото еды, составляет рацион и ведёт дневник питания. Встроенная система подписок.",
-    outcomes: ["> срок: 2 недели"],
+      "Отправляешь фото еды — бот считает калории, собирает рацион и ведёт дневник. Внутри подписочная модель.",
+    outcomes: ["> запустили за 2 недели"],
     tags: ["Python", "Postgres", "Redis", "Telegram"],
     status: "zapushen",
     year: "2025",
@@ -53,8 +53,8 @@ const projects = [
     id: 3,
     title: "Fanfy Studio — генерация AI-фанфиков",
     description:
-      "Сервис для генерации фанфиков с AI. Пользователь выбирает персонажей, сеттинг и сюжет — получает готовую историю.",
-    outcomes: ["> срок: 4 недели"],
+      "Пользователь выбирает персонажей, сеттинг, задаёт сюжет — AI пишет готовый фанфик. Веб-приложение со стримингом генерации.",
+    outcomes: ["> 4 недели от нуля до прода"],
     tags: ["Next.js", "TypeScript", "FastAPI", "Postgres", "OpenAI", "Streaming"],
     status: "zapushen",
     year: "2025",
@@ -68,8 +68,8 @@ const projects = [
     id: 4,
     title: "MechaPost — универсальный контент-завод",
     description:
-      "AI-платформа для создания видео: аватары, озвучка, любые видео и image-модели. Полный цикл продакшена контента в одном сервисе.",
-    outcomes: ["> срок: 4 недели"],
+      "Платформа для создания видео с AI: аватары, озвучка, генерация изображений. Весь продакшен контента собран в одном месте.",
+    outcomes: ["> разработка: 4 недели"],
     tags: ["Next.js", "Python", "Runway", "ElevenLabs", "Replicate", "GPU Inference"],
     status: "zapushen",
     year: "2025",
@@ -93,18 +93,44 @@ export function ProjectsGrid() {
         </div>
 
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project, index) => (
-            <article
-              key={project.id}
-              className={cn(
-                "group relative overflow-hidden rounded-xl border bg-card/40 p-6 sm:p-7 glass transition-all duration-400 active:scale-[0.99] hover-lift hover:border-primary/40 hover:bg-card/70 animate-fade-in-up",
-                "highlight" in project && project.highlight
-                  ? "sm:col-span-2 lg:col-span-2 border-primary/30 bg-gradient-to-br from-primary/8 via-card/50 to-primary/8"
-                  : "border-border/60",
-                project.featured && !("highlight" in project && project.highlight) && "sm:col-span-2 lg:col-span-1",
-              )}
-              style={{ animationDelay: `${(index % 6) * 100 + 200}ms` }}
-            >
+          {projects.map((project, index) => {
+            const projectLink =
+              project.homepage &&
+              (project.title === "Fanfy Studio — генерация AI-фанфиков" ||
+                project.title === "MechaPost — универсальный контент-завод")
+                ? project.homepage
+                : undefined
+
+            return (
+              <article
+                key={project.id}
+                className={cn(
+                  "group relative overflow-hidden rounded-xl border bg-card/40 p-6 sm:p-7 glass transition-all duration-400 active:scale-[0.99] hover-lift hover:border-primary/40 hover:bg-card/70 animate-fade-in-up",
+                  "highlight" in project && project.highlight
+                    ? "sm:col-span-2 lg:col-span-2 border-primary/30 bg-gradient-to-br from-primary/8 via-card/50 to-primary/8"
+                    : "border-border/60",
+                  project.featured && !("highlight" in project && project.highlight) && "sm:col-span-2 lg:col-span-1",
+                  projectLink && "cursor-pointer",
+                )}
+                style={{ animationDelay: `${(index % 6) * 100 + 200}ms` }}
+                onClick={() => {
+                  if (projectLink) {
+                    window.open(projectLink, "_blank", "noopener,noreferrer")
+                  }
+                }}
+                onKeyDown={(event) => {
+                  if (!projectLink) {
+                    return
+                  }
+
+                  if (event.key === "Enter" || event.key === " ") {
+                    event.preventDefault()
+                    window.open(projectLink, "_blank", "noopener,noreferrer")
+                  }
+                }}
+                role={projectLink ? "link" : undefined}
+                tabIndex={projectLink ? 0 : undefined}
+              >
               {"highlight" in project && project.highlight && (
                 <div className="absolute left-5 top-5 flex items-center gap-2 rounded-full border border-primary/40 bg-primary/15 px-3.5 py-1.5 animate-pulse-glow">
                   <Sparkles className="h-3.5 w-3.5 text-primary" />
@@ -175,12 +201,10 @@ export function ProjectsGrid() {
                 ))}
               </div>
 
-              {project.homepage &&
-                (project.title === "Fanfy Studio — генерация AI-фанфиков" ||
-                  project.title === "MechaPost — универсальный контент-завод") && (
+              {projectLink && (
                 <div className="mb-2">
                   <a
-                    href={project.homepage}
+                    href={projectLink}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group/link inline-flex items-center gap-2 font-mono text-xs text-primary transition-all duration-300 hover:text-foreground"
@@ -193,8 +217,9 @@ export function ProjectsGrid() {
               )}
 
               <div className="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-primary via-primary/80 to-transparent transition-all duration-500 group-hover:w-full" />
-            </article>
-          ))}
+              </article>
+            )
+          })}
         </div>
       </div>
     </section>

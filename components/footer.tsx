@@ -16,13 +16,12 @@ export function Footer() {
               </h2>
             </div>
             <p className="max-w-md text-base sm:text-lg text-muted-foreground leading-relaxed">
-              Можете написать нам в телеграм, либо сразу поставить 15 минутную встречу с нашей командой для
-              обсуждения вашего проекта.
+              Напишите в телеграм или сразу забронируйте 15-минутный слот. Расскажите что нужно, обсудим, найдём варианты сотрудничества.
               <br />
-              Для запросов напрямую к Олегу, пишите в телеграм.
+              Если хотите обратиться к Олегу напрямую, пишите в телеграм.
             </p>
 
-            <div className="pt-2">
+            <div className="pt-2 flex flex-col sm:flex-row gap-4">
               <a
                 href="https://t.me/oleg_code"
                 target="_blank"
@@ -30,6 +29,14 @@ export function Footer() {
                 className="group relative inline-flex items-center justify-center gap-3 overflow-hidden rounded-xl border border-primary bg-primary/10 px-8 py-4 sm:py-4 font-mono text-sm text-primary transition-all duration-500 hover:text-primary-foreground active:scale-[0.98] w-full sm:w-auto"
               >
                 <span className="relative z-10">написать нам</span>
+                <span className="relative z-10 transition-transform duration-300 group-hover:translate-x-1">→</span>
+                <span className="absolute inset-0 -translate-x-full bg-primary transition-transform duration-500 group-hover:translate-x-0" />
+              </a>
+              <a
+                href="/how-we-work"
+                className="group relative inline-flex items-center justify-center gap-3 overflow-hidden rounded-xl border border-primary bg-primary/10 px-8 py-4 sm:py-4 font-mono text-sm text-primary transition-all duration-500 hover:text-primary-foreground active:scale-[0.98] w-full sm:w-auto"
+              >
+                <span className="relative z-10">как мы работаем</span>
                 <span className="relative z-10 transition-transform duration-300 group-hover:translate-x-1">→</span>
                 <span className="absolute inset-0 -translate-x-full bg-primary transition-transform duration-500 group-hover:translate-x-0" />
               </a>
@@ -61,7 +68,7 @@ export function Footer() {
           </div>
 
           <p className="font-mono text-xs text-muted-foreground text-center sm:text-right">
-            © {new Date().getFullYear()} x10Devs — команда заказной разработки
+            © {new Date().getFullYear()} x10Devs
           </p>
         </div>
       </div>

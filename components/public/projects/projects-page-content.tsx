@@ -213,22 +213,43 @@ export function ProjectsPageContent() {
 
         {/* Projects Grid */}
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {filteredProjects.map((project, index) => (
-            <article
-              key={project.id}
-              className={cn(
-                "group relative overflow-hidden rounded-xl border bg-card/40 p-6 sm:p-7 glass transition-all duration-400 active:scale-[0.99] hover-lift opacity-0",
-                isVisible && "animate-fade-in-up",
-                hoveredProject === project.id && "border-primary/40 bg-card/70",
-                "highlight" in project && project.highlight
-                  ? "sm:col-span-2 lg:col-span-2 border-primary/30 bg-gradient-to-br from-primary/8 via-card/50 to-primary/8"
-                  : "border-border/60",
-                project.featured && !("highlight" in project && project.highlight) && "sm:col-span-2 lg:col-span-1",
-              )}
-              style={{ animationDelay: `${(index % 6) * 80 + 200}ms` }}
-              onMouseEnter={() => setHoveredProject(project.id)}
-              onMouseLeave={() => setHoveredProject(null)}
-            >
+          {filteredProjects.map((project, index) => {
+            const projectLink = project.homepage
+
+            return (
+              <article
+                key={project.id}
+                className={cn(
+                  "group relative overflow-hidden rounded-xl border bg-card/40 p-6 sm:p-7 glass transition-all duration-400 active:scale-[0.99] hover-lift opacity-0",
+                  isVisible && "animate-fade-in-up",
+                  hoveredProject === project.id && "border-primary/40 bg-card/70",
+                  "highlight" in project && project.highlight
+                    ? "sm:col-span-2 lg:col-span-2 border-primary/30 bg-gradient-to-br from-primary/8 via-card/50 to-primary/8"
+                    : "border-border/60",
+                  project.featured && !("highlight" in project && project.highlight) && "sm:col-span-2 lg:col-span-1",
+                  projectLink && "cursor-pointer",
+                )}
+                style={{ animationDelay: `${(index % 6) * 80 + 200}ms` }}
+                onMouseEnter={() => setHoveredProject(project.id)}
+                onMouseLeave={() => setHoveredProject(null)}
+                onClick={() => {
+                  if (projectLink) {
+                    window.open(projectLink, "_blank", "noopener,noreferrer")
+                  }
+                }}
+                onKeyDown={(event) => {
+                  if (!projectLink) {
+                    return
+                  }
+
+                  if (event.key === "Enter" || event.key === " ") {
+                    event.preventDefault()
+                    window.open(projectLink, "_blank", "noopener,noreferrer")
+                  }
+                }}
+                role={projectLink ? "link" : undefined}
+                tabIndex={projectLink ? 0 : undefined}
+              >
               {"highlight" in project && project.highlight && (
                 <div className="absolute left-5 top-5 flex items-center gap-2 rounded-full border border-primary/40 bg-primary/15 px-3.5 py-1.5 animate-pulse-glow">
                   <Sparkles className="h-3.5 w-3.5 text-primary" />
@@ -310,6 +331,7 @@ export function ProjectsPageContent() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 font-mono text-xs text-muted-foreground hover:text-primary transition-all duration-300 group/link"
+                  onClick={(event) => event.stopPropagation()}
                 >
                   <Github className="h-4 w-4 transition-transform group-hover/link:scale-110" />
                   <span className="underline-animate">source</span>
@@ -320,6 +342,7 @@ export function ProjectsPageContent() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 font-mono text-xs text-primary hover:text-foreground transition-all duration-300 group/link"
+                    onClick={(event) => event.stopPropagation()}
                   >
                     <ExternalLink className="h-4 w-4 transition-transform group-hover/link:scale-110 group-hover/link:rotate-12" />
                     <span className="underline-animate">live</span>
@@ -328,8 +351,9 @@ export function ProjectsPageContent() {
               </div>
 
               <div className="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-primary via-primary/80 to-transparent transition-all duration-500 group-hover:w-full" />
-            </article>
-          ))}
+              </article>
+            )
+          })}
         </div>
 
         {filteredProjects.length === 0 && (

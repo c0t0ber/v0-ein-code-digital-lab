@@ -1,83 +1,47 @@
-# EinCode
+# x10Devs
 
-A modern, minimal code editor / playground built with Next.js, React and Radix UI.
+Делаем продукты с AI: MVP, боты, SaaS-платформы, автоматизация контента. Работаем с нейросетями с GPT-3, до того как это стало мейнстримом. 10 проектов в проде.
 
-Version: `0.1.1`
+## Что делаем
 
-## What the project does
+- AI-боты (Telegram, веб)
+- SaaS-платформы и веб-приложения
+- Автоматизация контента и бизнес-процессов
+- MVP и стартапы под ключ
+- B2B-сервисы и сложные интеграции
 
-Code Forge is a lightweight, opinionated editor UI and playground intended for experimenting with editor-like components and small developer tools. It demonstrates a modern stack including Next.js 16, React 19, TypeScript, Tailwind CSS and Radix UI primitives.
+## Кейсы
 
-### Why this is useful
+| Проект | Что сделали | Стек |
+|--------|-------------|------|
+| AI-бот холодных продаж | Бот сам пишет клиентам в Telegram, ведёт диалог и доводит до продажи. 100+ клиентов в день без участия человека | Python, Next.js, Postgres, Redis, Telegram API |
+| Контент-завод SEO-статей | Генератор статей для онлайн-университета из топ-5. 200+ статей, ~800 часов сэкономлено | Python, n8n, WordPress API, OpenAI, RAG |
+| AI-нутрициолог | Фото еды → подсчёт калорий, рацион, дневник. Подписочная модель | Python, Postgres, Redis, Telegram |
+| Fanfy Studio | Генерация AI-фанфиков: персонажи, сеттинг, сюжет → готовый текст со стримингом | Next.js, FastAPI, Postgres, OpenAI |
+| MechaPost | Платформа для видео с AI: аватары, озвучка, генерация изображений | Next.js, Python, Runway, ElevenLabs, Replicate |
 
-- Fast developer playground to prototype editor UX and integrations.
-- Collection of reusable UI components (see `components/`).
-- Up-to-date with Next.js 16 and React 19 modern patterns (app router, server components).
+## Команда
 
-#### Key features
+- **Олег Стефанов** — Tech Lead @ Salmon, 8+ лет в разработке. Собирает AI-продукты с нуля и консультирует бизнес.
+- **Данил Устинов** — Team Lead @ SpectrumData, 8+ лет в разработке. Архитектура, стек, деплой — от первого коммита до прода.
+- **Кирилл Зубков** — Project Manager, 3+ года в PM. Точка контакта с командой, следит за сроками и прогрессом.
 
-- App shell and layout in `app/`
-- Reusable UI primitives under `components/` (cursor glow, header, footer, workbench, etc.)
-- Styling with Tailwind CSS and global styles in `styles/` and `app/globals.css`
-- TypeScript-first codebase
+## Контакт
 
-##### Getting started
+- Telegram: [@oleg_code](https://t.me/oleg_code)
+- [Забронировать 15-минутный созвон](https://cal.com/new-era-devs/15min)
 
-Prerequisites
+## Стек сайта
 
-- Node.js 18 or newer
-- pnpm (recommended) — install from <https://pnpm.io/>
+Next.js 16, React 19, TypeScript, Tailwind CSS v4. Статический экспорт, деплой на Vercel.
 
-Quick start
-
-\`\`\`bash
-# install dependencies
-pnpm install
-
-# run development server
-pnpm dev
-\`\`\`
-
-Available scripts
-
-- `pnpm dev` — runs `next dev` (development server)
-- `pnpm build` — runs `next build` (production build)
-- `pnpm start` — runs `next start` (serve built app)
-- `pnpm lint` — run `eslint .`
-
-Building for production
-
-\`\`\`bash
-pnpm build
-pnpm start
-\`\`\`
-
-Project layout (high level)
-
-- `app/` — Next.js App Router pages and layout
-- `components/` — UI components and small feature pieces
-- `lib/` — utilities and helpers
-- `public/` — static assets
-- `styles/` — global styles and Tailwind CSS entry
-
-Where to get help
-
-- Create an issue: <https://github.com/ehsanghaffar/code-forge/issues>
-- For quick questions, open a discussion or file a concise issue with reproduction steps.
-
-Who maintains this project
-
-- Maintainer: Ehsan Ghaffar — listed as the package author.
-
-Contributing
-
-Contributions are welcome. Open an issue to discuss larger changes, or send a pull request with a focused, well-documented change. Keep changes small and include a description and screenshots (if UI-related).
-
-Notes and next steps
-
-- Consider adding a `CONTRIBUTING.md` and CI badges for build/lint status.
-- If you want, I can add a basic `CONTRIBUTING.md` and a PR template next.
+```bash
+pnpm install   # зависимости
+pnpm dev       # dev-сервер на localhost:3000
+pnpm build     # продакшен-билд
+pnpm lint      # линтинг
+```
 
 ---
 
-If anything in this README should be adjusted (more examples, extra badges, or internal docs links), tell me which parts you want expanded and I'll update it.
+Работаем с апреля 2025.

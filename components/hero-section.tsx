@@ -49,15 +49,15 @@ export function HeroSection() {
                 <span
                   className="bg-gradient-to-l from-primary/50 to-accent text-transparent bg-clip-text typing-cursor"
                 >
-                  быстрее и дешевле, чем вы думали
+                  быстрее и дешевле, чем вы думаете
                 </span>
               </h1>
             </div>
 
             <ul className="max-w-lg list-disc space-y-2 pl-5 text-base leading-relaxed text-foreground/90 sm:text-lg sm:font-medium animate-fade-in-up stagger-2">
-              <li>MVP, боты, SaaS, автоматизация контента.</li>
-              <li>10 проектов в продакшене.</li>
-              <li>Команда, которая строит продукты на AI. Работаем с нейросетями со времён GPT-3.</li>
+              <li>MVP, боты, SaaS-платформы, автоматизация контента. Если в задаче есть AI — мы такое уже строили.</li>
+              <li>10 проектов в проде.</li>
+              <li>Работаем с нейросетями с GPT-3, до того как это стало мейнстримом.</li>
             </ul>
 
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up stagger-3">
@@ -133,7 +133,7 @@ export function HeroSection() {
               className="absolute -bottom-3 sm:-bottom-6 -left-2 sm:-left-6 rounded-lg border border-border bg-card glass px-3 sm:px-4 py-1.5 font-mono text-[11px] sm:text-xs text-muted-foreground animate-float"
               style={{ animationDelay: "1s" }}
             >
-              Апр. 2025
+              Растём вместе с вами с Апреля 2025
             </div>
 
             <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] rounded-full bg-primary/5 blur-3xl" />

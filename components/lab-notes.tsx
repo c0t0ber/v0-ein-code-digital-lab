@@ -1,6 +1,5 @@
 "use client"
 
-import { useState } from "react"
 import { cn } from "@/lib/utils"
 import { ArrowRight } from "lucide-react"
 
@@ -9,7 +8,7 @@ const notes = [
     id: 1,
     title: "Олег Стефанов — Tech Lead @ Salmon",
     excerpt:
-      "Строит продукты на AI, консультирует бизнес по AI. Если можно автоматизировать — он знает как.",
+      "Собирает AI-продукты с нуля и консультирует бизнес. Если задачу можно автоматизировать нейросетями, Олег скажет как.",
     date: "8+ лет в разработке",
     category: "ai",
     link: "https://www.linkedin.com/in/oleg-stefanov-a887b1196/",
@@ -19,7 +18,7 @@ const notes = [
     id: 2,
     title: "Данил Устинов — Team Lead @ SpectrumData",
     excerpt:
-      "Проектирует архитектуру, выбирает стек, запускает в прод. Технический фундамент каждого проекта.",
+      "Архитектура, стек, деплой. На нём техническая часть проектов от первого коммита до прода.",
     date: "8+ лет в разработке",
     category: "tech",
     link: "https://www.linkedin.com/in/danil-ustinov/",
@@ -29,25 +28,21 @@ const notes = [
     id: 3,
     title: "Кирилл Зубков — Project Manager",
     excerpt:
-      "Связующее звено между вами и командой. Отвечает за то, чтобы всё было прозрачно и в срок.",
+      "Ваша точка контакта с командой. Следит чтобы проект двигался, вы были в курсе, а сроки не плыли.",
     date: "3+ года в PM",
     category: "management",
+    link: "https://www.linkedin.com/in/%D0%BA%D0%B8%D1%80%D0%B8%D0%BB%D0%BB-%D0%B7%D1%83%D0%B1%D0%BA%D0%BE%D0%B2-3875233b5",
     color: "from-primary/20 to-emerald-500/20",
   },
 ]
 
 export function LabNotes() {
-  const [expandedNote, setExpandedNote] = useState<number | null>(null)
-
   return (
     <section id="notes" className="px-4 sm:px-6 py-20 sm:py-28 border-t border-border/30">
       <div className="mx-auto max-w-7xl">
         <div className="mb-10 sm:mb-14 space-y-3 animate-fade-in-up">
           <p className="font-mono text-xs uppercase tracking-[0.25em] sm:tracking-[0.35em] text-primary">Команда</p>
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">Кто делает проект в реальности</h2>
-          <p className="max-w-2xl text-base sm:text-lg text-muted-foreground leading-relaxed">
-            Конкретные люди с продакшен опытом.
-          </p>
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">Команда с реальным опытом</h2>
         </div>
 
         <div className="grid gap-5 md:grid-cols-2">
@@ -55,11 +50,27 @@ export function LabNotes() {
             <article
               key={note.id}
               className={cn(
-                "group relative cursor-pointer overflow-hidden rounded-xl border border-border bg-card/40 glass p-6 sm:p-7 transition-all duration-400 hover:border-primary/40 hover:bg-card/60 active:scale-[0.99] hover-lift animate-fade-in-up",
-                expandedNote === note.id && "border-primary/50 bg-card/70",
+                "group relative overflow-hidden rounded-xl border border-border bg-card/40 glass p-6 sm:p-7 transition-all duration-400 hover:border-primary/40 hover:bg-card/60 active:scale-[0.99] hover-lift animate-fade-in-up",
+                note.link && "cursor-pointer",
               )}
               style={{ animationDelay: `${index * 100 + 200}ms` }}
-              onClick={() => setExpandedNote(expandedNote === note.id ? null : note.id)}
+              onClick={() => {
+                if (note.link) {
+                  window.open(note.link, "_blank", "noopener,noreferrer")
+                }
+              }}
+              onKeyDown={(event) => {
+                if (!note.link) {
+                  return
+                }
+
+                if (event.key === "Enter" || event.key === " ") {
+                  event.preventDefault()
+                  window.open(note.link, "_blank", "noopener,noreferrer")
+                }
+              }}
+              role={note.link ? "link" : undefined}
+              tabIndex={note.link ? 0 : undefined}
             >
               <div
                 className={cn(
@@ -83,16 +94,10 @@ export function LabNotes() {
                 <p className="text-sm leading-relaxed text-muted-foreground">{note.excerpt}</p>
 
                 {note.link ? (
-                  <a
-                    href={note.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()}
-                    className="mt-5 inline-flex items-center gap-2 font-mono text-xs text-primary transition-all duration-300 hover:text-foreground sm:opacity-0 sm:translate-x-[-8px] group-hover:opacity-100 group-hover:translate-x-0"
-                  >
+                  <span className="mt-5 inline-flex items-center gap-2 font-mono text-xs text-primary transition-all duration-300 hover:text-foreground sm:opacity-0 sm:translate-x-[-8px] group-hover:opacity-100 group-hover:translate-x-0">
                     <span>роль и скиллы</span>
                     <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
-                  </a>
+                  </span>
                 ) : (
                   <div className="mt-5 flex items-center gap-2 font-mono text-xs text-primary transition-all duration-300 sm:opacity-0 sm:translate-x-[-8px] group-hover:opacity-100 group-hover:translate-x-0">
                     <span>роль и скиллы</span>
