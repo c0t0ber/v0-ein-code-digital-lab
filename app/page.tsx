@@ -7,7 +7,7 @@ import { LandingNav } from "@/components/landing-nav"
 import { generateWebsiteStructuredData, generateOrganizationStructuredData } from "@/lib/structured-data"
 
 export default function Home() {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://eindev.ir'
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://x10.stefanov.tech'
   const websiteStructuredData = generateWebsiteStructuredData(baseUrl)
   const orgStructuredData = generateOrganizationStructuredData(baseUrl)
 

@@ -24,7 +24,7 @@ const spaceGrotesk = Space_Grotesk({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://eindev.ir'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://x10.stefanov.tech'),
   title: {
     default: "x10Devs — Команда разработки",
     template: "%s | x10Devs",

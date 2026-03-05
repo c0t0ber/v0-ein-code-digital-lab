@@ -36,4 +36,4 @@ User-agent: ClaudeBot
 Allow: /
 
 # Sitemap
-Sitemap: https://eindev.ir/sitemap.xml
+Sitemap: https://x10.stefanov.tech/sitemap.xml

@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { CursorGlow } from "@/components/cursor-glow"
 import { HowWeWorkPageContent } from "@/components/public/how-we-work/how-we-work-page-content"
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://eindev.ir"
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://x10.stefanov.tech"
 
 export const metadata: Metadata = {
   title: "How We Work",
