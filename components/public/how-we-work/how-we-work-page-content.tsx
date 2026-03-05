@@ -18,7 +18,7 @@ const processSteps = [
     goal: "Установочный созвон",
     duration: "60 минут",
     description:
-      "На проект выходят те, кто будет писать код. Не менеджеры и не стажёры. Собираем людей под ваш стек, знакомим с задачей на установочном созвоне и договариваемся как будем работать.",
+      "На проект выходят те, кто будет двигать его вперёд. Не менеджеры и не стажёры. Собираем людей под ваш стек, знакомим с задачей на установочном созвоне и договариваемся как будем работать.",
     icon: Users,
   },
   {
@@ -27,7 +27,7 @@ const processSteps = [
     goal: "Фиксируем условия",
     duration: "1 день",
     description:
-      "Договорились о формате, зафиксировали цифры, стартуем. Предоплата нужна чтобы мы забронировали команду под вас, а не раскидали её на другие проекты. Все условия на бумаге до первого коммита.",
+      "Договорились о формате, зафиксировали числа, стартуем. Предоплата нужна чтобы мы забронировали команду под вас, а не раскидали её на другие проекты.",
     icon: Wallet,
   },
   {
@@ -45,7 +45,7 @@ const processSteps = [
     goal: "Еженедельные демо",
     duration: "Спринты",
     description:
-      "Каждую неделю показываем рабочий код, не слайды. Можно потыкать, можно дать фидбек, можно поменять приоритеты. Если что-то пошло не туда, вы узнаете на демо, а не когда мы придём сдавать проект.",
+      "Каждую неделю показываем рабочий проект, не слайды. Можно потыкать, можно дать фидбек, можно поменять приоритеты. Если что-то пошло не туда, вы узнаете на демо, а не когда мы придём сдавать проект.",
     icon: Rocket,
   },
 ]
@@ -118,7 +118,7 @@ export function HowWeWorkPageContent() {
         <section className="mt-10 sm:mt-14 rounded-xl border border-primary/30 bg-gradient-to-br from-primary/10 via-card/60 to-card/50 p-6 sm:p-8 animate-fade-in-up stagger-4">
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">Есть задача? Давайте разберём</h2>
           <p className="mt-3 max-w-2xl text-sm sm:text-base leading-relaxed text-muted-foreground">
-            Запишитесь на 15-минутный созвон. Расскажете что нужно, мы скажем можем ли помочь и сколько это стоит. Никто ничего не продаёт.
+            Запишитесь на встречу на 15 минут. Расскажете что нужно, мы скажем можем ли помочь и сколько это стоит.
           </p>
 
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
@@ -126,7 +126,7 @@ export function HowWeWorkPageContent() {
               href="/#connect"
               className="group inline-flex items-center justify-center gap-2 rounded-lg border border-primary bg-primary/10 px-6 py-3 font-mono text-xs uppercase tracking-wider text-primary transition-all duration-300 hover:bg-primary hover:text-primary-foreground active:scale-[0.98]"
             >
-              назначить микро-созвон
+              назначить встречу на 15 минут
               <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
             <Link
