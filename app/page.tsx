@@ -4,12 +4,12 @@ import { LabNotes } from "@/components/lab-notes"
 import { Footer } from "@/components/footer"
 import { CursorGlow } from "@/components/cursor-glow"
 import { LandingNav } from "@/components/landing-nav"
-import { generateWebsiteStructuredData, generatePersonStructuredData } from "@/lib/structured-data"
+import { generateWebsiteStructuredData, generateOrganizationStructuredData } from "@/lib/structured-data"
 
 export default function Home() {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://eindev.ir'
   const websiteStructuredData = generateWebsiteStructuredData(baseUrl)
-  const personStructuredData = generatePersonStructuredData()
+  const orgStructuredData = generateOrganizationStructuredData(baseUrl)
 
   return (
     <>
@@ -19,7 +19,7 @@ export default function Home() {
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(personStructuredData) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(orgStructuredData) }}
       />
       <main id="home" className="relative min-h-screen overflow-hidden scanlines">
         <CursorGlow />

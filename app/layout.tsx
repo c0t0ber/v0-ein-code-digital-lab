@@ -30,18 +30,22 @@ export const metadata: Metadata = {
     template: "%s | x10Devs",
   },
   description:
-    "x10Devs — команда заказной разработки. Проектируем, разрабатываем и запускаем цифровые продукты для бизнеса.",
-  keywords: ["Заказная разработка", "Web Development", "Next.js", "React", "TypeScript", "AI", "MVP", "Команда разработки"],
-  authors: [{ name: "x10Devs" }],
+    "x10Devs — команда разработки. AI-продукты, MVP, SaaS-платформы, автоматизация. Олег Стефанов, Данил Устинов, Кирилл Зубков. 10 проектов в проде.",
+  keywords: [
+    "x10Devs", "x10 Devs", "команда разработки", "заказная разработка",
+    "Олег Стефанов", "Oleg Stefanov", "Данил Устинов", "Danil Ustinov", "Кирилл Зубков", "Kirill Zubkov",
+    "AI разработка", "MVP разработка", "SaaS", "Telegram боты", "автоматизация",
+    "Next.js", "React", "TypeScript", "Python",
+  ],
+  authors: [{ name: "x10Devs" }, { name: "Олег Стефанов" }, { name: "Данил Устинов" }, { name: "Кирилл Зубков" }],
   creator: "x10Devs",
   publisher: "x10Devs",
-  generator: "v0.app",
   openGraph: {
     type: "website",
     locale: "ru_RU",
     url: "/",
     title: "x10Devs — Команда разработки",
-    description: "Запускаем цифровые продукты: веб-платформы, внутренние системы и интеграции для бизнеса.",
+    description: "x10Devs — команда разработки. AI-продукты, MVP, SaaS, автоматизация. Олег Стефанов, Данил Устинов, Кирилл Зубков.",
     siteName: "x10Devs",
     images: [
       {
@@ -55,7 +59,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "x10Devs — Команда разработки",
-    description: "Запускаем цифровые продукты: от идеи и дизайна до релиза и поддержки.",
+    description: "x10Devs — команда разработки. AI-продукты, MVP, SaaS, автоматизация. 10 проектов в проде.",
     creator: "@x10devs",
     images: ["/og-image.png"],
   },

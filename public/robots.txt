@@ -1,9 +1,39 @@
-# *
+# All crawlers
 User-agent: *
 Allow: /
 Disallow: /api/
 Disallow: /_next/
 Disallow: /admin/
+
+# Google
+User-agent: Googlebot
+Allow: /
+
+# ChatGPT / OpenAI
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# Bing / Microsoft
+User-agent: Bingbot
+Allow: /
+
+# Yandex
+User-agent: YandexBot
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+# Claude
+User-agent: ClaudeBot
+Allow: /
 
 # Sitemap
 Sitemap: https://eindev.ir/sitemap.xml
