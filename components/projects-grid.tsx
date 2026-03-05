@@ -16,7 +16,6 @@ const projects = [
     stars: 120,
     forks: 18,
     url: "https://github.com/ehsanghaffar/einui",
-    homepage: "https://ui.eindev.ir",
     featured: true,
     highlight: true,
   },
@@ -32,7 +31,6 @@ const projects = [
     stars: 65,
     forks: 10,
     url: "https://github.com/ehsanghaffar/einbiogpt",
-    homepage: "https://bio.eindev.ir/",
     featured: false,
   },
   {
