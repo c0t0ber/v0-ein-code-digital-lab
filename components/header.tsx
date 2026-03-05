@@ -11,6 +11,7 @@ import Link from "next/link"
 const navItems = [
   { label: "Home", href: "/" },
   { label: "Projects", href: "/projects" },
+  { label: "How We Work", href: "/how-we-work" },
   // { label: "Notes", href: "/notes" },/
   { label: "Workbench", href: "/workbench" },
   { label: "Blog", href: "/blog" },
