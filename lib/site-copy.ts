@@ -273,11 +273,11 @@ export const siteCopy = {
       roles: ["digital products", "web platforms", "MVPs and startups", "B2B services", "complex integrations"],
       eyebrow: "x10Devs — product development team",
       title: "We launch AI products",
-      highlight: "faster and cheaper than most teams expect",
+      highlight: "faster and cheaper than you'd expect",
       bullets: [
-        "MVPs, bots, SaaS platforms, content automation. If AI is part of the task, we have probably built something close already.",
+        "MVPs, bots, SaaS platforms, content automation. If AI is part of the task, we've probably built something like it already.",
         "10 production projects shipped.",
-        "We have been working with neural nets since the GPT-3 days, before it turned mainstream.",
+        "We've been working with neural nets since the GPT-3 days, before it went mainstream.",
       ],
       primaryCta: "see projects",
       secondaryCta: "discuss your task",
@@ -285,15 +285,15 @@ export const siteCopy = {
         "> projects from $1,000",
         "> average MVP timeline: 2 weeks",
         "> AI + product consultation: $100",
-        "> time in IT: 8+ years",
+        "> engineering experience: 8+ years",
         "> status: taking new projects [ok]",
       ],
-      growthNote: "Growing with clients since April 2025",
+      growthNote: "Building with clients since April 2025",
       scrollHint: "scroll down",
     },
     projects: {
       eyebrow: "Projects",
-      title: "Products we already shipped",
+      title: "What we've shipped",
       featuredLabel: "Featured case",
       statusLabel: "shipped",
       projectLinkLabel: "live project",
@@ -302,7 +302,7 @@ export const siteCopy = {
           id: 0,
           title: "Telegram AI bot for outbound sales",
           description:
-            "The bot reaches out to prospects in Telegram, handles the conversation, and moves them toward a sale. Anti-detect setup, account rotation, almost no babysitting.",
+            "The bot reaches out to prospects in Telegram, handles the conversation, and moves them toward a sale. Anti-detect setup, account rotation, runs autonomously.",
           outcomes: ["> 100+ leads per day", "> no human in the loop", "> 4 weeks to build"],
           tags: ["Python", "Next.js", "Postgres", "Redis", "Telegram API", "Anti-detect"],
           year: "2025",
@@ -323,7 +323,7 @@ export const siteCopy = {
           id: 2,
           title: "AI nutritionist in Telegram",
           description:
-            "Send a food photo, the bot counts calories, builds a meal plan, and keeps a diary. Subscription model inside.",
+            "Send a food photo, the bot counts calories, builds a meal plan, and keeps a diary. Built-in subscription model.",
           outcomes: ["> shipped in 2 weeks"],
           tags: ["Python", "Postgres", "Redis", "Telegram"],
           year: "2025",
@@ -355,7 +355,7 @@ export const siteCopy = {
     },
     team: {
       eyebrow: "Team",
-      title: "People with actual delivery experience",
+      title: "A team with real shipping experience",
       skillsLabel: "role and skills",
       members: [
         {
@@ -382,7 +382,7 @@ export const siteCopy = {
           id: 3,
           title: "Kirill Zubkov — Project Manager",
           excerpt:
-            "Your main point of contact. He keeps the project moving, keeps you in the loop, and makes sure timelines do not drift.",
+            "Your main point of contact. He keeps the project moving, keeps you in the loop, and makes sure timelines don't drift.",
           date: "3+ years in PM",
           category: "delivery",
           link: "https://www.linkedin.com/in/%D0%BA%D0%B8%D1%80%D0%B8%D0%BB%D0%BB-%D0%B7%D1%83%D0%B1%D0%BA%D0%BE%D0%B2-3875233b5",
@@ -395,19 +395,19 @@ export const siteCopy = {
       titleLead: "Let's talk about your",
       titleAccent: "project",
       description:
-        "Message us on Telegram or book a 15-minute slot right away. Tell us what you need and we will figure out whether we are the right team for it.",
+        "Message us on Telegram or book a 15-minute slot right away. Tell us what you need and we'll figure out if we're the right team for it.",
       directContact: "If you want to reach Oleg directly, Telegram is the fastest route.",
       primaryCta: "message us",
       secondaryCta: "how we work",
       bookingTitle: "Book a call",
       madeWithStart: "Built with",
-      madeWithEnd: "and real product care",
+      madeWithEnd: "and attention to detail",
     },
     howWeWork: {
       eyebrow: "How We Work",
       title: "Five steps to a working product",
       description:
-        "We do not sell hours. We take the task and move it toward a product that works. This is the process from the first call to deployment.",
+        "We don't sell hours. We take the task and ship a working product. Here's how it works from the first call to deployment.",
       chips: ["fixed timelines", "weekly demos", "team matched to your stack"],
       stageLabel: "stage",
       steps: [
@@ -417,7 +417,7 @@ export const siteCopy = {
           goal: "Fast start",
           duration: "15 minutes",
           description:
-            "We get on a call and you explain what needs to be built. No giant brief, no deck, just plain language. Fifteen minutes is enough to understand whether we can help. If the task is not ours, we say it directly.",
+            "We get on a call and you explain what needs to be built. No giant brief, no deck, just plain language. Fifteen minutes is enough to understand if we can help. If it's not our kind of task, we'll say so directly.",
         },
         {
           id: "02",
@@ -425,23 +425,23 @@ export const siteCopy = {
           goal: "Kickoff call",
           duration: "60 minutes",
           description:
-            "The people who will actually move the project forward join from the start. Not proxy managers, not trainees. We shape the team around your stack, align on the task, and agree on the working setup.",
+            "The people who'll actually move the project forward join from the start. Not middlemen, not juniors. We shape the team around your stack, align on the task, and agree on the working setup.",
         },
         {
           id: "03",
-          title: "Advance payment and start",
+          title: "Deposit & kickoff",
           goal: "Lock the terms",
           duration: "1 day",
           description:
-            "Once the format and numbers are fixed, we start. The advance lets us reserve the team for your project instead of spreading them across other work.",
+            "Once the format and numbers are locked in, we start. The deposit lets us reserve the team for your project instead of spreading them across other work.",
         },
         {
           id: "04",
           title: "Spec",
-          goal: "So we do not rebuild later",
+          goal: "So we don't rebuild later",
           duration: "2-5 days",
           description:
-            "We break the project into parts: architecture, integrations, and what counts as done for each stage. Skip this and a month later everyone discovers they meant different things. We write it together, revisions included.",
+            "We break the project into parts: architecture, integrations, and what counts as done for each stage. Skip this and a month later everyone discovers they meant different things. We write it together, revisions are included.",
         },
         {
           id: "05",
@@ -449,19 +449,19 @@ export const siteCopy = {
           goal: "Weekly demos",
           duration: "Sprints",
           description:
-            "Every week we show a working product, not slides. You can click through it, give feedback, and change priorities. If something starts drifting, you hear about it in the demo, not on handoff day.",
+            "Every week we show a working product, not slides. You can click through it, give feedback, and shift priorities. If something's drifting, you'll hear about it in the demo — not on handoff day.",
         },
       ],
       ctaTitle: "Have a task? Let's break it down",
       ctaDescription:
-        "Book a 15-minute call. You explain the task, and we tell you whether we can help and what it would roughly cost.",
+        "Book a 15-minute call. You explain the task, we tell you if we can help and give you a rough estimate.",
       primaryCta: "book a 15-minute call",
       secondaryCta: "back to home",
     },
     notFound: {
       title: "Page not found",
-      description: "Looks like this page does not exist anymore or the link points the wrong way.",
-      subtext: "Let's get you back to something useful.",
+      description: "This page doesn't exist anymore, or the link points the wrong way.",
+      subtext: "Let's get you back on track.",
       primaryCta: "Go home",
       secondaryCta: "How we work",
       errorLabel: "Error code: 404_NOT_FOUND",
