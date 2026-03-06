@@ -1,4 +1,5 @@
 import type { BlogPost } from './blog-data'
+import type { Locale } from './i18n'
 
 export function generateBlogPostStructuredData(post: BlogPost, url: string) {
   return {
@@ -29,15 +30,15 @@ export function generateBlogPostStructuredData(post: BlogPost, url: string) {
   }
 }
 
-export function generateWebsiteStructuredData(url: string) {
+export function generateWebsiteStructuredData(url: string, locale: Locale, description: string) {
   return {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'x10Devs',
     alternateName: 'x10 Devs',
-    description: 'x10Devs — команда разработки. MVP, AI-боты, SaaS-платформы, автоматизация. Олег Стефанов, Данил Устинов, Кирилл Зубков.',
+    description,
     url,
-    inLanguage: 'ru',
+    inLanguage: locale,
     publisher: {
       '@type': 'Organization',
       name: 'x10Devs',
@@ -46,14 +47,14 @@ export function generateWebsiteStructuredData(url: string) {
   }
 }
 
-export function generateOrganizationStructuredData(url: string) {
+export function generateOrganizationStructuredData(url: string, description: string) {
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'x10Devs',
     url,
     logo: `${url}/icon.svg`,
-    description: 'Команда разработки: AI-продукты, MVP, SaaS-платформы, автоматизация контента и бизнес-процессов.',
+    description,
     foundingDate: '2025-04',
     founders: [
       {

@@ -1,36 +1,24 @@
-import { HeroSection } from "@/components/hero-section"
-import { ProjectsGrid } from "@/components/projects-grid"
-import { LabNotes } from "@/components/lab-notes"
-import { Footer } from "@/components/footer"
-import { CursorGlow } from "@/components/cursor-glow"
-import { LandingNav } from "@/components/landing-nav"
-import { generateWebsiteStructuredData, generateOrganizationStructuredData } from "@/lib/structured-data"
+import type { Metadata } from "next"
+import { LocaleRedirect } from "@/components/locale-redirect"
+import { getAlternateLanguageUrls } from "@/lib/i18n"
+
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://x10.stefanov.tech"
+
+export const metadata: Metadata = {
+  title: "x10Devs",
+  description: "Choose the Russian or English version of x10Devs. Browser language is detected automatically.",
+  alternates: {
+    canonical: baseUrl,
+    languages: getAlternateLanguageUrls(baseUrl),
+  },
+}
 
 export default function Home() {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://x10.stefanov.tech'
-  const websiteStructuredData = generateWebsiteStructuredData(baseUrl)
-  const orgStructuredData = generateOrganizationStructuredData(baseUrl)
-
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteStructuredData) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(orgStructuredData) }}
-      />
-      <main id="home" className="relative min-h-screen overflow-hidden scanlines">
-        <CursorGlow />
-        <div className="relative z-10">
-          <LandingNav />
-          <HeroSection />
-          <ProjectsGrid />
-          <LabNotes />
-          <Footer />
-        </div>
-      </main>
-    </>
+    <LocaleRedirect
+      heading="Choose site language / Выберите язык сайта"
+      description="We detect the browser language and open the right version automatically. Если нужно, язык можно выбрать руками."
+      noscriptLabel="JavaScript is disabled, so open the needed version manually."
+    />
   )
 }
