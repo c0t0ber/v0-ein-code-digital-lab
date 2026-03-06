@@ -24,6 +24,63 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://x10.stefanov.tech'),
+  title: {
+    default: "x10Devs — AI Products, MVPs, SaaS",
+    template: "%s | x10Devs",
+  },
+  description:
+    "x10Devs builds AI products, MVPs, SaaS platforms, and automation workflows. Product development team for launch-ready software.",
+  keywords: [
+    "x10Devs",
+    "x10 Devs",
+    "AI development",
+    "MVP development",
+    "SaaS development",
+    "automation",
+    "product development team",
+    "custom software development",
+    "Telegram bots",
+    "Next.js",
+    "TypeScript",
+    "Python",
+  ],
+  authors: [{ name: "x10Devs" }, { name: "Oleg Stefanov" }, { name: "Danil Ustinov" }, { name: "Kirill Zubkov" }],
+  creator: "x10Devs",
+  publisher: "x10Devs",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "/",
+    title: "x10Devs — AI Products, MVPs, SaaS",
+    description: "x10Devs builds AI products, MVPs, SaaS platforms, and automation workflows.",
+    siteName: "x10Devs",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "x10Devs — AI Products, MVPs, SaaS",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "x10Devs — AI Products, MVPs, SaaS",
+    description: "x10Devs builds AI products, MVPs, SaaS platforms, and automation workflows.",
+    creator: "@x10devs",
+    images: ["/og-image.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   icons: {
     icon: [
       {
@@ -42,6 +99,9 @@ export const metadata: Metadata = {
     apple: "/apple-icon.png",
   },
   manifest: "/site.webmanifest",
+  alternates: {
+    canonical: "/",
+  },
 }
 
 export default function RootLayout({

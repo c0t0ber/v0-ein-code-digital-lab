@@ -3,7 +3,7 @@ export const locales = ["ru", "en"] as const
 export type Locale = (typeof locales)[number]
 
 export const defaultLocale: Locale = "ru"
-export const localeCookieName = "preferred-locale"
+export const localePreferenceKey = "preferred-locale"
 
 export function isLocale(value: string): value is Locale {
   return locales.includes(value as Locale)
@@ -73,6 +73,6 @@ export function getAlternateLanguageUrls(baseUrl: string, pathname = "/") {
   return {
     ru: getLocalizedUrl(baseUrl, "ru", pathname),
     en: getLocalizedUrl(baseUrl, "en", pathname),
-    "x-default": new URL(pathname === "/" ? "/" : pathname, baseUrl).toString(),
+    "x-default": getLocalizedUrl(baseUrl, defaultLocale, pathname),
   }
 }

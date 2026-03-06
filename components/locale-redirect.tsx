@@ -3,10 +3,13 @@
 import Link from "next/link"
 import { useEffect } from "react"
 import { useRouter } from "next/navigation"
-import { getLocalizedPath, getPreferredLocale, isLocale, localeCookieName } from "@/lib/i18n"
+import { getLocalizedPath, getPreferredLocale, isLocale, localePreferenceKey } from "@/lib/i18n"
 
 interface LocaleRedirectProps {
   pathname?: string
+  heading?: string
+  description?: string
+  noscriptLabel?: string
 }
 
 function readStoredLocale() {
@@ -14,14 +17,12 @@ function readStoredLocale() {
     return null
   }
 
-  const storedLocale = window.localStorage.getItem(localeCookieName)
+  const storedLocale = window.localStorage.getItem(localePreferenceKey)
   if (storedLocale && isLocale(storedLocale)) {
     return storedLocale
   }
 
-  const cookieMatch = document.cookie.match(new RegExp(`(?:^|; )${localeCookieName}=([^;]+)`))
-  const cookieLocale = cookieMatch?.[1]
-  return cookieLocale && isLocale(cookieLocale) ? cookieLocale : null
+  return null
 }
 
 function persistLocale(locale: "ru" | "en") {
@@ -29,11 +30,15 @@ function persistLocale(locale: "ru" | "en") {
     return
   }
 
-  window.localStorage.setItem(localeCookieName, locale)
-  document.cookie = `${localeCookieName}=${locale}; path=/; max-age=${60 * 60 * 24 * 365}; samesite=lax`
+  window.localStorage.setItem(localePreferenceKey, locale)
 }
 
-export function LocaleRedirect({ pathname = "/" }: LocaleRedirectProps) {
+export function LocaleRedirect({
+  pathname = "/",
+  heading = "Choose site language / Выберите язык сайта",
+  description = "We will open the matching version automatically. Можно открыть нужную версию и вручную.",
+  noscriptLabel = "JavaScript is off, so pick the language manually.",
+}: LocaleRedirectProps) {
   const router = useRouter()
 
   useEffect(() => {
@@ -48,10 +53,13 @@ export function LocaleRedirect({ pathname = "/" }: LocaleRedirectProps) {
     <main className="flex min-h-screen items-center justify-center px-4">
       <div className="max-w-xl text-center">
         <p className="font-mono text-xs uppercase tracking-[0.3em] text-primary">x10Devs</p>
-        <h1 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">Выбираем язык сайта</h1>
+        <h1 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">{heading}</h1>
         <p className="mt-4 text-muted-foreground">
-          Сейчас отправим вас на нужную версию. Если хотите, можно открыть её руками.
+          {description}
         </p>
+        <noscript>
+          <p className="mt-4 text-sm text-muted-foreground">{noscriptLabel}</p>
+        </noscript>
         <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
           <Link
             href={getLocalizedPath("ru", pathname)}

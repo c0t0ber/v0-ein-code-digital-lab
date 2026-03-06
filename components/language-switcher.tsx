@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
-import { Locale, getLocalizedPath, localeCookieName, stripLocaleFromPathname } from "@/lib/i18n"
+import { Locale, getLocalizedPath, localePreferenceKey, stripLocaleFromPathname } from "@/lib/i18n"
 
 interface LanguageSwitcherProps {
   locale: Locale
@@ -25,8 +25,7 @@ export function LanguageSwitcher({ locale, label, className }: LanguageSwitcherP
       return
     }
 
-    window.localStorage.setItem(localeCookieName, nextLocale)
-    document.cookie = `${localeCookieName}=${nextLocale}; path=/; max-age=${60 * 60 * 24 * 365}; samesite=lax`
+    window.localStorage.setItem(localePreferenceKey, nextLocale)
   }
 
   return (
