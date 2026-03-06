@@ -1,7 +1,7 @@
-import Script from "next/script"
 import { Heart } from "lucide-react"
 import { Locale, getLocalizedPath } from "@/lib/i18n"
 import { SiteCopy } from "@/lib/site-copy"
+import { CalEmbed } from "@/components/cal-embed"
 
 interface FooterProps {
   locale: Locale
@@ -55,10 +55,7 @@ export function Footer({ locale, copy }: FooterProps) {
               {copy.bookingTitle}
             </p>
             <div className="cal-embed-shell relative z-[110] overflow-hidden rounded-xl border border-border/60 bg-card/70 p-0 sm:p-2">
-              <div
-                id="my-cal-inline-15min-footer"
-                className="w-full overflow-hidden"
-              />
+              <CalEmbed />
             </div>
           </div>
         </div>
@@ -79,16 +76,6 @@ export function Footer({ locale, copy }: FooterProps) {
           </p>
         </div>
       </div>
-      <Script id="cal-inline-15min-footer" strategy="afterInteractive">{`
-        (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-        Cal("init", "15minFooter", {origin:"https://app.cal.com"});
-        Cal.ns["15minFooter"]("inline", {
-          elementOrSelector:"#my-cal-inline-15min-footer",
-          config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
-          calLink: "new-era-devs/15min",
-        });
-        Cal.ns["15minFooter"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
-      `}</Script>
     </footer>
   )
 }
