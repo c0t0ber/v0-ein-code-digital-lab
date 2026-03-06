@@ -1,7 +1,14 @@
 import Script from "next/script"
 import { Heart } from "lucide-react"
+import { Locale, getLocalizedPath } from "@/lib/i18n"
+import { SiteCopy } from "@/lib/site-copy"
 
-export function Footer() {
+interface FooterProps {
+  locale: Locale
+  copy: SiteCopy["footer"]
+}
+
+export function Footer({ locale, copy }: FooterProps) {
   return (
     <footer id="connect" className="border-t border-border/30 px-4 sm:px-6 py-16 sm:py-28">
       <div className="mx-auto max-w-7xl">
@@ -9,16 +16,16 @@ export function Footer() {
           {/* Left column */}
           <div className="space-y-6 sm:space-y-8 animate-fade-in-up">
             <div className="space-y-3">
-              <p className="font-mono text-xs uppercase tracking-[0.25em] sm:tracking-[0.35em] text-primary">Контакты</p>
+              <p className="font-mono text-xs uppercase tracking-[0.25em] sm:tracking-[0.35em] text-primary">{copy.eyebrow}</p>
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl text-balance">
-                {"Обсудим ваш "}
-                <span className="bg-gradient-to-l from-primary/50 to-accent text-transparent bg-clip-text ">проект</span>
+                {`${copy.titleLead} `}
+                <span className="bg-gradient-to-l from-primary/50 to-accent text-transparent bg-clip-text ">{copy.titleAccent}</span>
               </h2>
             </div>
             <p className="max-w-md text-base sm:text-lg text-muted-foreground leading-relaxed">
-              Напишите в телеграм или сразу забронируйте 15-минутный слот. Расскажите что нужно, обсудим, найдём варианты сотрудничества.
+              {copy.description}
               <br />
-              Если хотите обратиться к Олегу напрямую, пишите в телеграм.
+              {copy.directContact}
             </p>
 
             <div className="pt-2 flex flex-col sm:flex-row gap-4">
@@ -28,15 +35,15 @@ export function Footer() {
                 rel="noopener noreferrer"
                 className="group relative inline-flex items-center justify-center gap-3 overflow-hidden rounded-xl border border-primary bg-primary/10 px-8 py-4 sm:py-4 font-mono text-sm text-primary transition-all duration-500 hover:text-primary-foreground active:scale-[0.98] w-full sm:w-auto"
               >
-                <span className="relative z-10">написать нам</span>
+                <span className="relative z-10">{copy.primaryCta}</span>
                 <span className="relative z-10 transition-transform duration-300 group-hover:translate-x-1">→</span>
                 <span className="absolute inset-0 -translate-x-full bg-primary transition-transform duration-500 group-hover:translate-x-0" />
               </a>
               <a
-                href="/how-we-work"
+                href={getLocalizedPath(locale, "/how-we-work")}
                 className="group relative inline-flex items-center justify-center gap-3 overflow-hidden rounded-xl border border-primary bg-primary/10 px-8 py-4 sm:py-4 font-mono text-sm text-primary transition-all duration-500 hover:text-primary-foreground active:scale-[0.98] w-full sm:w-auto"
               >
-                <span className="relative z-10">как мы работаем</span>
+                <span className="relative z-10">{copy.secondaryCta}</span>
                 <span className="relative z-10 transition-transform duration-300 group-hover:translate-x-1">→</span>
                 <span className="absolute inset-0 -translate-x-full bg-primary transition-transform duration-500 group-hover:translate-x-0" />
               </a>
@@ -45,7 +52,7 @@ export function Footer() {
 
           <div className="space-y-6 stagger-2">
             <p className="font-mono text-xs uppercase tracking-[0.25em] sm:tracking-[0.35em] text-muted-foreground">
-              Запись на созвон
+              {copy.bookingTitle}
             </p>
             <div className="cal-embed-shell relative z-[110] overflow-hidden rounded-xl border border-border/60 bg-card/70 p-0 sm:p-2">
               <div
@@ -62,9 +69,9 @@ export function Footer() {
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
             </span>
-            <span>Сделано с</span>
+            <span>{copy.madeWithStart}</span>
             <Heart className="h-3.5 w-3.5 text-destructive animate-pulse" />
-            <span>и вниманием к продукту</span>
+            <span>{copy.madeWithEnd}</span>
           </div>
 
           <p className="font-mono text-xs text-muted-foreground text-center sm:text-right">

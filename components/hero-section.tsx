@@ -1,16 +1,19 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import { SiteCopy } from "@/lib/site-copy"
 
-const roles = ["цифровые продукты", "веб-платформы", "MVP и стартапы", "B2B-сервисы", "сложные интеграции"]
+interface HeroSectionProps {
+  copy: SiteCopy["hero"]
+}
 
-export function HeroSection() {
+export function HeroSection({ copy }: HeroSectionProps) {
   const [currentRole, setCurrentRole] = useState(0)
   const [displayText, setDisplayText] = useState("")
   const [isDeleting, setIsDeleting] = useState(false)
 
   useEffect(() => {
-    const targetText = roles[currentRole]
+    const targetText = copy.roles[currentRole]
     const timeout = setTimeout(
       () => {
         if (!isDeleting) {
@@ -24,14 +27,14 @@ export function HeroSection() {
             setDisplayText(displayText.slice(0, -1))
           } else {
             setIsDeleting(false)
-            setCurrentRole((prev) => (prev + 1) % roles.length)
+            setCurrentRole((prev) => (prev + 1) % copy.roles.length)
           }
         }
       },
       isDeleting ? 50 : 100,
     )
     return () => clearTimeout(timeout)
-  }, [displayText, isDeleting, currentRole])
+  }, [copy.roles, currentRole, displayText, isDeleting])
 
   return (
     <section className="relative overflow-x-hidden px-4 sm:px-6 pt-28 sm:pt-36 pb-16 sm:pb-24">
@@ -41,23 +44,23 @@ export function HeroSection() {
           <div className="space-y-8 sm:space-y-10">
             <div className="space-y-3 animate-fade-in-up">
               <p className="font-mono text-xs uppercase tracking-[0.25em] sm:tracking-[0.35em] text-primary">
-                x10Devs — команда разработки
+                {copy.eyebrow}
               </p>
               <h1 className="text-4xl font-bold tracking-tight sm:text-4xl lg:text-5xl xl:text-6xl text-balance">
-                Запускаем продукты с AI
+                {copy.title}
                 <br />
                 <span
                   className="bg-gradient-to-l from-primary/50 to-accent text-transparent bg-clip-text typing-cursor"
                 >
-                  быстрее и дешевле, чем вы думаете
+                  {copy.highlight}
                 </span>
               </h1>
             </div>
 
             <ul className="max-w-lg list-disc space-y-2 pl-5 text-base leading-relaxed text-foreground/90 sm:text-lg sm:font-medium animate-fade-in-up stagger-2">
-              <li>MVP, боты, SaaS-платформы, автоматизация контента. Если в задаче есть AI — мы такое уже строили.</li>
-              <li>10 проектов в проде.</li>
-              <li>Работаем с нейросетями с GPT-3, до того как это стало мейнстримом.</li>
+              {copy.bullets.map((bullet) => (
+                <li key={bullet}>{bullet}</li>
+              ))}
             </ul>
 
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up stagger-3">
@@ -65,16 +68,15 @@ export function HeroSection() {
                 href="#projects"
                 className="group relative inline-flex items-center justify-center gap-3 overflow-hidden rounded-lg border border-primary bg-primary/10 px-7 py-4 sm:py-3.5 font-mono text-sm text-primary transition-all duration-500 hover:bg-primary hover:text-primary-foreground active:scale-[0.98]"
               >
-                <span className="relative z-10">смотреть проекты</span>
+                <span className="relative z-10">{copy.primaryCta}</span>
                 <span className="relative z-10 transition-transform duration-300 group-hover:translate-x-1">→</span>
-                {/* Animated background */}
                 <span className="absolute inset-0 -translate-x-full bg-primary transition-transform duration-500 group-hover:translate-x-0" />
               </a>
               <a
                 href="#connect"
                 className="group relative inline-flex items-center justify-center gap-3 overflow-hidden rounded-lg border border-primary bg-primary/10 px-7 py-4 sm:py-3.5 font-mono text-sm text-primary transition-all duration-500 hover:bg-primary hover:text-primary-foreground active:scale-[0.98]"
               >
-                <span className="relative z-10">обсудить задачу</span>
+                <span className="relative z-10">{copy.secondaryCta}</span>
                 <span className="relative z-10 transition-all duration-300 group-hover:translate-x-1">
                   →
                 </span>
@@ -83,10 +85,8 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* Right column - ASCII Art / Visual */}
           <div className="relative min-w-0 animate-scale-in stagger-4">
             <div className="relative min-w-0 rounded-xl border border-border bg-card/60 glass p-5 sm:p-8 lg:-mx-3 hover-lift">
-              {/* Terminal header dots */}
               <div className="absolute top-4 left-4 flex items-center gap-2">
                 <div className="h-3 w-3 rounded-full bg-destructive/60 transition-colors hover:bg-destructive" />
                 <div className="h-3 w-3 rounded-full bg-yellow-500/60 transition-colors hover:bg-yellow-500" />
@@ -103,11 +103,7 @@ export function HeroSection() {
  ██╔██╗  ██║████╔╝██║
 ██╔╝ ██╗ ██║╚██████╔╝
 
-> проекты от $1,000
-> среднее время до MVP: 2 недели
-> консультация по AI и разработке: $100
-> стаж в IT: 8+ лет
-> статус: принимаем заказы [ok]`}</span>
+${copy.terminalLines.join("\n")}`}</span>
                 <span className="hidden sm:block">{`██╗  ██╗ ██╗ ██████╗ ██████╗ ███████╗██╗   ██╗███████╗
 ╚██╗██╔╝███║██╔═████╗██╔══██╗██╔════╝██║   ██║██╔════╝
  ╚███╔╝ ╚██║██║██╔██║██║  ██║█████╗  ██║   ██║███████╗
@@ -115,11 +111,7 @@ export function HeroSection() {
 ██╔╝ ██╗ ██║╚██████╔╝██████╔╝███████╗ ╚████╔╝ ███████║
 ╚═╝  ╚═╝ ╚═╝ ╚═════╝ ╚═════╝ ╚══════╝  ╚═══╝  ╚══════╝
 
-> проекты от $1,000
-> среднее время до MVP: 2 недели
-> консультация по AI и разработке: $100
-> стаж в IT: 8+ лет
-> статус: принимаем заказы [ok]`}</span>
+${copy.terminalLines.join("\n")}`}</span>
               </pre>
             </div>
 
@@ -133,7 +125,7 @@ export function HeroSection() {
               className="absolute -bottom-3 sm:-bottom-6 -left-2 sm:-left-6 rounded-lg border border-border bg-card glass px-3 sm:px-4 py-1.5 font-mono text-[11px] sm:text-xs text-muted-foreground animate-float"
               style={{ animationDelay: "1s" }}
             >
-              Растём вместе с вами с Апреля 2025
+              {copy.growthNote}
             </div>
 
             <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] rounded-full bg-primary/5 blur-3xl" />
@@ -142,7 +134,7 @@ export function HeroSection() {
       </div>
 
       <div className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 lg:flex flex-col items-center gap-2 animate-fade-in stagger-6">
-        <span className="font-mono text-xs text-muted-foreground">листай вниз</span>
+        <span className="font-mono text-xs text-muted-foreground">{copy.scrollHint}</span>
         <div className="h-12 w-px animate-pulse bg-gradient-to-b from-primary/50 to-transparent" />
       </div>
     </section>
