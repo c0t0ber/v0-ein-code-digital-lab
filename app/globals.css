@@ -231,34 +231,43 @@
   background: oklch(from var(--card) l c h / 0.72);
 }
 
-#my-cal-inline-15min-footer {
-  width: 100%;
-  min-height: 860px;
-}
-
-#my-cal-inline-15min-footer iframe {
+.cal-embed-shell [data-cal-embed-root] {
   display: block;
   width: 100%;
+  min-width: 0;
+  min-height: 860px;
+  overflow: hidden;
+}
+
+.cal-embed-shell .cal-embed-mount {
+  width: 100%;
+  min-height: inherit;
+}
+
+.cal-embed-shell [data-cal-embed-root] iframe {
+  display: block;
+  width: 100%;
+  min-width: 0;
   min-height: 860px;
   border: 0;
 }
 
 @media (min-width: 640px) {
-  #my-cal-inline-15min-footer {
+  .cal-embed-shell [data-cal-embed-root] {
     min-height: 980px;
   }
 
-  #my-cal-inline-15min-footer iframe {
+  .cal-embed-shell [data-cal-embed-root] iframe {
     min-height: 980px;
   }
 }
 
 @media (min-width: 1024px) {
-  #my-cal-inline-15min-footer {
+  .cal-embed-shell [data-cal-embed-root] {
     min-height: 1100px;
   }
 
-  #my-cal-inline-15min-footer iframe {
+  .cal-embed-shell [data-cal-embed-root] iframe {
     min-height: 1100px;
   }
 }

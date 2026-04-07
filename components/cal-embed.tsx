@@ -3,18 +3,14 @@
 import { useEffect, useRef } from "react"
 
 export function CalEmbed() {
-  const containerRef = useRef<HTMLDivElement>(null)
+  const mountRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    const el = containerRef.current
-    if (!el) return
-
-    // Give the element a unique ID for this mount
-    const id = "cal-inline-" + Math.random().toString(36).slice(2, 8)
-    el.id = id
+    const mountNode = mountRef.current
+    if (!mountNode) return
 
     const w = window as any
-    const ns = "ns_" + id
+    const ns = "cal_footer_" + Math.random().toString(36).slice(2, 10)
 
     // Cal.com IIFE — idempotent: creates queue proxy, loads embed.js only once
     ;(function (C: any, A: string, L: string) {
@@ -50,7 +46,7 @@ export function CalEmbed() {
 
     w.Cal("init", ns, { origin: "https://app.cal.com" })
     w.Cal.ns[ns]("inline", {
-      elementOrSelector: "#" + id,
+      elementOrSelector: mountNode,
       config: { layout: "month_view", useSlotsViewOnSmallScreen: "true" },
       calLink: "new-era-devs/15min",
     })
@@ -60,9 +56,13 @@ export function CalEmbed() {
     })
 
     return () => {
-      if (el) el.innerHTML = ""
+      mountNode.innerHTML = ""
     }
   }, [])
 
-  return <div ref={containerRef} className="w-full overflow-hidden" />
+  return (
+    <div data-cal-embed-root="">
+      <div ref={mountRef} className="cal-embed-mount" />
+    </div>
+  )
 }
